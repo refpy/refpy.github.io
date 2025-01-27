@@ -6,7 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search - RefPy v0.1 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lateral Buckling &#8212; RefPy v0.1 documentation</title>
   
   
   
@@ -37,12 +39,11 @@
     <script src="_static/documentation_options.js?v=b32bce50"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'search';</script>
-  <script src="_static/searchtools.js"></script>
-  <script src="_static/language_data.js"></script>
-  <script src="searchindex.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lateral_buckling';</script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Limit States" href="limit_states.html" />
+    <link rel="prev" title="Pipe Properties" href="pipe_properties.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -78,7 +79,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="#"
+      action="search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -135,7 +136,7 @@
 <nav class="navbar-nav">
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="refpy.html">
                         API Reference
                       </a>
@@ -212,6 +213,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </header>
@@ -221,8 +226,6 @@ document.write(`
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -237,7 +240,7 @@ document.write(`
 <nav class="navbar-nav">
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="refpy.html">
                         API Reference
                       </a>
@@ -286,8 +289,20 @@ document.write(`
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pipe_properties.html">Pipe Properties</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lateral Buckling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limit_states.html">Limit States</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe_soil_interaction.html">Pipe-Soil Interaction</a></li>
+</ul>
+</div>
+</nav></div>
+        <div class="sidebar-primary-item">
 <form class="bd-search d-flex align-items-center"
-      action="#"
+      action="search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -319,46 +334,91 @@ document.write(`
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article"></div>
-              
-              
-  <div class="bd-search-container">
-    <h1>Search</h1>
-    <noscript>
-      <div class="admonition error">
-        <p class="admonition-title">Error</p>
-        <p>Please activate JavaScript to enable the search functionality.</p>
-      </div>
-    </noscript>
-    
-<form class="bd-search d-flex align-items-center"
-      action="#"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search the docs ..."
-         aria-label="Search the docs ..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    <div id="search-results"></div>
-  </div>
-  <script>
-    // Activate the search field on page load
-    let searchInput = document.querySelector("form.bd-search input");
-    if (searchInput) {
-        searchInput.focus();
-        searchInput.select();
-        console.log("[PST]: Set focus on search field.");
-    }
-  </script>
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
 
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="refpy.html" class="nav-link">API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Lateral Buckling</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-refpy.lateral_buckling">
+<span id="lateral-buckling"></span><h1>Lateral Buckling<a class="headerlink" href="#module-refpy.lateral_buckling" title="Link to this heading">#</a></h1>
+<p>Library of lateral buckling calculations</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="refpy.lateral_buckling.friction_distribution">
+<span class="sig-prename descclassname"><span class="pre">refpy.lateral_buckling.</span></span><span class="sig-name descname"><span class="pre">friction_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">low_estimate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">best_estimate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high_estimate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/refpy/lateral_buckling.html#friction_distribution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.lateral_buckling.friction_distribution" title="Link to this definition">#</a></dt>
+<dd><p>Compute the parameters of the lognormal friction factor distribution (axial or lateral)
+by minimising the root mean square error (RMSE) between geotechnical estimates and
+back-calculated friction factors from the lognormal distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>low_estimate</strong> (<em>float</em>) – Low estimate (LE) friction factor, representing the 5th percentile.</p></li>
+<li><p><strong>best_estimate</strong> (<em>float</em>) – Best estimate (BE) friction factor, representing the 50th percentile.</p></li>
+<li><p><strong>high_estimate</strong> (<em>float</em>) – High estimate (HE) friction factor, representing the 95th percentile.</p></li>
+<li><p><strong>fit_type</strong> (<em>str</em>) – Type of fit to perform: ‘LE_BE_HE’ (fit to LE, BE, and HE), ‘LE_BE’ (fit to LE and BE),
+or ‘BE_HE’ (fit to BE and HE).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>mean_friction</strong> (<em>float</em>) – Mean of the lognormal friction factor distribution.</p></li>
+<li><p><strong>std_friction</strong> (<em>float</em>) – Standard deviation of the lognormal friction factor distribution.</p></li>
+<li><p><strong>location_param</strong> (<em>float</em>) – Location parameter of the lognormal friction factor distribution.</p></li>
+<li><p><strong>scale_param</strong> (<em>float</em>) – Scale parameter of the lognormal friction factor distribution.</p></li>
+<li><p><strong>rmse_le_be_he</strong> (<em>float</em>) – RMSE for the ‘LE_BE_HE’ fit type.</p></li>
+<li><p><strong>rmse_le_be</strong> (<em>float</em>) – RMSE for the ‘LE_BE’ fit type.</p></li>
+<li><p><strong>rmse_be_he</strong> (<em>float</em>) – RMSE for the ‘BE_HE’ fit type.</p></li>
+<li><p><strong>rmse_best_fit</strong> (<em>float</em>) – RMSE for the best fit type.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The function calculates the parameters of the lognormal friction factor distribution
+based on LE at 5th percentile, BE at 50th percentile, and HE at 95th percentile</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">friction_distribution</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="s1">&#39;LE_BE_HE&#39;</span><span class="p">)</span>
+<span class="go">(np.float64(0.9684082990173732), np.float64(0.30043235817282576), np.float64(-0.0780466572081312), np.float64(0.3031342048564706), np.float64(0.5617726470692103), np.float64(0.9249212712925357), np.float64(1.5228213095679706), np.float64(0.05765844141916946))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
               
               
               
@@ -366,6 +426,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="pipe_properties.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Pipe Properties</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="limit_states.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Limit States</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -373,7 +451,31 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.lateral_buckling.friction_distribution"><code class="docutils literal notranslate"><span class="pre">friction_distribution()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/lateral_buckling.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
               
             
           </div>
