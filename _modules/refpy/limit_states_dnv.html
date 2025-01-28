@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>refpy.limit_states &#8212; RefPy v0.1 documentation</title>
+    <title>refpy.limit_states_dnv &#8212; RefPy v0.1 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
     <script src="../../_static/documentation_options.js?v=b32bce50"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/refpy/limit_states';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/refpy/limit_states_dnv';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -337,7 +337,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">refpy.limit_states</li>
+    <li class="breadcrumb-item active" aria-current="page">refpy.limit_...</li>
   </ul>
 </nav>
 </div>
@@ -354,15 +354,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <h1>Source code for refpy.limit_states</h1><div class="highlight"><pre>
+  <h1>Source code for refpy.limit_states_dnv</h1><div class="highlight"><pre>
 <span></span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Library of DNV limit states</span>
 <span class="sd">&#39;&#39;&#39;</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">refpy.pipe_properties</span> <span class="kn">import</span> <span class="n">wall_thickness_corroded</span>
 
 <div class="viewcode-block" id="temperature_derating_stress">
-<a class="viewcode-back" href="../../limit_states.html#refpy.limit_states.temperature_derating_stress">[docs]</a>
+<a class="viewcode-back" href="../../limit_states_dnv.html#refpy.limit_states_dnv.temperature_derating_stress">[docs]</a>
 <span class="k">def</span> <span class="nf">temperature_derating_stress</span><span class="p">(</span><span class="n">material</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
                                 <span class="n">temperature</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -371,7 +372,7 @@ document.write(`
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    material : numpy.ndarray</span>
-<span class="sd">        The types of materials (e.g., &#39;CMn&#39;, &#39;13CR&#39;, &#39;22Cr&#39;, &#39;25CR&#39;).</span>
+<span class="sd">        The types of materials: 1 for &#39;CMn&#39; or &#39;13CR&#39; &amp; 2 for &#39;22Cr&#39; or &#39;25CR&#39;.</span>
 <span class="sd">    temperature : numpy.ndarray</span>
 <span class="sd">        The temperatures at which to calculate the derating stress.</span>
 
@@ -384,17 +385,24 @@ document.write(`
 <span class="sd">    ------</span>
 <span class="sd">    ValueError</span>
 <span class="sd">        If a material is not supported.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; materials = np.array([1, 1, 2, 2])</span>
+<span class="sd">    &gt;&gt;&gt; temperatures = np.array([80.0, 110.0, 80.0, 110.0])</span>
+<span class="sd">    &gt;&gt;&gt; temperature_derating_stress(materials, temperatures)</span>
+<span class="sd">    array([18000000., 34000000., 70000000., 95000000.])</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">derating_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">mat</span><span class="p">,</span> <span class="n">temp</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="n">temperature</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">mat</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;CMn&#39;</span><span class="p">,</span> <span class="s1">&#39;13CR&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">mat</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">derating_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span>
                                        <span class="p">[</span><span class="mf">50.0</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">200.0</span><span class="p">],</span>
-                                       <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="mf">70.0</span><span class="p">])</span>
-        <span class="k">elif</span> <span class="n">mat</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;22Cr&#39;</span><span class="p">,</span> <span class="s1">&#39;25CR&#39;</span><span class="p">):</span>
+                                       <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">30.0E+06</span><span class="p">,</span> <span class="mf">70.0E+06</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">mat</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
             <span class="n">derating_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span>
                                        <span class="p">[</span><span class="mf">20.0</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">200.0</span><span class="p">],</span>
-                                       <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">40.0</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">,</span> <span class="mf">140.0</span><span class="p">])</span>
+                                       <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">40.0E+06</span><span class="p">,</span> <span class="mf">90.0E+06</span><span class="p">,</span> <span class="mf">140.0E+06</span><span class="p">])</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Material not supported&#39;</span><span class="p">)</span>
         <span class="n">derating_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">derating_array</span><span class="p">,</span> <span class="n">derating_value</span><span class="p">)</span>
@@ -402,7 +410,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="yield_stress">
-<a class="viewcode-back" href="../../limit_states.html#refpy.limit_states.yield_stress">[docs]</a>
+<a class="viewcode-back" href="../../limit_states_dnv.html#refpy.limit_states_dnv.yield_stress">[docs]</a>
 <span class="k">def</span> <span class="nf">yield_stress</span><span class="p">(</span><span class="n">material</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">smys</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">temperature</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
                  <span class="n">material_strength_factor</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -411,7 +419,7 @@ document.write(`
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    material : numpy.ndarray</span>
-<span class="sd">        The types of materials.</span>
+<span class="sd">        The types of materials: 1 for &#39;CMn&#39; or &#39;13CR&#39; &amp; 2 for &#39;22Cr&#39; or &#39;25CR&#39;.</span>
 <span class="sd">    smys : numpy.ndarray</span>
 <span class="sd">        The specified minimum yield strengths of the materials.</span>
 <span class="sd">    temperature : numpy.ndarray</span>
@@ -424,13 +432,26 @@ document.write(`
 <span class="sd">    numpy.ndarray</span>
 <span class="sd">        The yield stress values of the materials at the given temperatures</span>
 <span class="sd">        and strength factor.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    temperature_derating_stress : Calculate the temperature derating stress of a material.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; materials = np.array([1, 1, 2, 2])</span>
+<span class="sd">    &gt;&gt;&gt; smys = np.array([450.0E+06, 450.0E+06, 550.0E+06, 550.0E+06])</span>
+<span class="sd">    &gt;&gt;&gt; temperatures = np.array([80.0, 110.0, 80.0, 110.0])</span>
+<span class="sd">    &gt;&gt;&gt; material_strength_factor = np.array([0.96, 0.96, 0.96, 0.96])</span>
+<span class="sd">    &gt;&gt;&gt; yield_stress(materials, smys, temperatures, material_strength_factor)</span>
+<span class="sd">    array([4.1472e+08, 3.9936e+08, 4.6080e+08, 4.3680e+08])</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">derating_value</span> <span class="o">=</span> <span class="n">temperature_derating_stress</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="n">temperature</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">smys</span> <span class="o">-</span> <span class="n">derating_value</span><span class="p">)</span> <span class="o">*</span> <span class="n">material_strength_factor</span></div>
 
 
 <div class="viewcode-block" id="tensile_strength">
-<a class="viewcode-back" href="../../limit_states.html#refpy.limit_states.tensile_strength">[docs]</a>
+<a class="viewcode-back" href="../../limit_states_dnv.html#refpy.limit_states_dnv.tensile_strength">[docs]</a>
 <span class="k">def</span> <span class="nf">tensile_strength</span><span class="p">(</span><span class="n">material</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">smts</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">temperature</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
                      <span class="n">material_strength_factor</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
@@ -439,7 +460,7 @@ document.write(`
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    material : numpy.ndarray</span>
-<span class="sd">        The types of materials.</span>
+<span class="sd">        The types of materials: 1 for &#39;CMn&#39; or &#39;13CR&#39; &amp; 2 for &#39;22Cr&#39; or &#39;25CR&#39;.</span>
 <span class="sd">    smts : numpy.ndarray</span>
 <span class="sd">        The specified minimum tensile strengths of the materials.</span>
 <span class="sd">    temperature : numpy.ndarray</span>
@@ -452,22 +473,36 @@ document.write(`
 <span class="sd">    numpy.ndarray</span>
 <span class="sd">        The tensile strength values of the materials at the given temperatures</span>
 <span class="sd">        and strength factor.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    temperature_derating_stress : Calculate the temperature derating stress of a material.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; materials = np.array([1, 1, 2, 2])</span>
+<span class="sd">    &gt;&gt;&gt; smts = np.array([485.0E+06, 485.0E+06, 590.0E+06, 590.0E+06])</span>
+<span class="sd">    &gt;&gt;&gt; temperatures = np.array([80.0, 110.0, 80.0, 110.0])</span>
+<span class="sd">    &gt;&gt;&gt; material_strength_factor = np.array([0.96, 0.96, 0.96, 0.96])</span>
+<span class="sd">    &gt;&gt;&gt; tensile_strength(materials, smts, temperatures, material_strength_factor)</span>
+<span class="sd">    array([4.4832e+08, 4.3296e+08, 4.9920e+08, 4.7520e+08])</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">derating_value</span> <span class="o">=</span> <span class="n">temperature_derating_stress</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="n">temperature</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">smts</span> <span class="o">-</span> <span class="n">derating_value</span><span class="p">)</span> <span class="o">*</span> <span class="n">material_strength_factor</span></div>
 
 
 <div class="viewcode-block" id="characteristic_material_burst_strength">
-<a class="viewcode-back" href="../../limit_states.html#refpy.limit_states.characteristic_material_burst_strength">[docs]</a>
-<span class="k">def</span> <span class="nf">characteristic_material_burst_strength</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="n">smys</span><span class="p">,</span> <span class="n">smts</span><span class="p">,</span>
-                                           <span class="n">temperature</span><span class="p">,</span> <span class="n">material_strength_factor</span><span class="p">):</span>
+<a class="viewcode-back" href="../../limit_states_dnv.html#refpy.limit_states_dnv.characteristic_material_burst_strength">[docs]</a>
+<span class="k">def</span> <span class="nf">characteristic_material_burst_strength</span><span class="p">(</span><span class="n">material</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">smys</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                                           <span class="n">smts</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">temperature</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                                           <span class="n">material_strength_factor</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Calculate the characteristic material burst strength.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    material : numpy.ndarray</span>
-<span class="sd">        The types of materials.</span>
+<span class="sd">        The types of materials: 1 for &#39;CMn&#39; or &#39;13CR&#39; &amp; 2 for &#39;22Cr&#39; or &#39;25CR&#39;.</span>
 <span class="sd">    smys : numpy.ndarray</span>
 <span class="sd">        The specified minimum yield strengths of the materials.</span>
 <span class="sd">    smts : numpy.ndarray</span>
@@ -482,18 +517,35 @@ document.write(`
 <span class="sd">    numpy.ndarray</span>
 <span class="sd">        The characteristic material burst strength values of the materials</span>
 <span class="sd">        at the given temperatures and strength factor.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    yield_stress : Calculate the yield stress of a material.</span>
+<span class="sd">    tensile_strength : Calculate the tensile strength of a material.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; materials = np.array([1, 1, 2, 2])</span>
+<span class="sd">    &gt;&gt;&gt; smys = np.array([450.0E+06, 450.0E+06, 550.0E+06, 550.0E+06])</span>
+<span class="sd">    &gt;&gt;&gt; smts = np.array([600.0E+06, 600.0E+06, 700.0E+06, 700.0E+06])</span>
+<span class="sd">    &gt;&gt;&gt; temperatures = np.array([80.0, 110.0, 80.0, 110.0])</span>
+<span class="sd">    &gt;&gt;&gt; material_strength_factor = np.array([0.96, 0.96, 0.96, 0.96])</span>
+<span class="sd">    &gt;&gt;&gt; characteristic_material_burst_strength(materials, smys, smts, temperatures, material_strength_factor)</span>
+<span class="sd">    array([4.1472e+08, 3.9936e+08, 4.6080e+08, 4.3680e+08])</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">yield_stress_value</span> <span class="o">=</span> <span class="n">yield_stress</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="n">smys</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span>
                                       <span class="n">material_strength_factor</span><span class="p">)</span>
     <span class="n">tensile_strength_value</span> <span class="o">=</span> <span class="n">tensile_strength</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="n">smts</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span>
                                               <span class="n">material_strength_factor</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">yield_stress_value</span><span class="p">,</span> <span class="n">tensile_strength_value</span><span class="o">/</span><span class="mf">1.15</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">yield_stress_value</span><span class="p">,</span> <span class="n">tensile_strength_value</span> <span class="o">/</span> <span class="mf">1.15</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="burst_pressure">
-<a class="viewcode-back" href="../../limit_states.html#refpy.limit_states.burst_pressure">[docs]</a>
-<span class="k">def</span> <span class="nf">burst_pressure</span><span class="p">(</span><span class="n">outer_diameter</span><span class="p">,</span> <span class="n">wall_thickness</span><span class="p">,</span> <span class="n">corrosion_allowance</span><span class="p">,</span>
-                   <span class="n">material</span><span class="p">,</span> <span class="n">smys</span><span class="p">,</span> <span class="n">smts</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">material_strength_factor</span><span class="p">):</span>
+<a class="viewcode-back" href="../../limit_states_dnv.html#refpy.limit_states_dnv.burst_pressure">[docs]</a>
+<span class="k">def</span> <span class="nf">burst_pressure</span><span class="p">(</span><span class="n">outer_diameter</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">wall_thickness</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                   <span class="n">corrosion_allowance</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">material</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                   <span class="n">smys</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">smts</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">temperature</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                   <span class="n">material_strength_factor</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Calculate the burst pressure of a pipeline.</span>
 
@@ -506,7 +558,7 @@ document.write(`
 <span class="sd">    corrosion_allowance : float</span>
 <span class="sd">        The corrosion allowance to be subtracted from the wall thickness.</span>
 <span class="sd">    material : numpy.ndarray</span>
-<span class="sd">        The types of materials (e.g., &#39;CMn&#39;, &#39;13CR&#39;, &#39;22Cr&#39;, &#39;25CR&#39;).</span>
+<span class="sd">        The types of materials: 1 for &#39;CMn&#39; or &#39;13CR&#39; &amp; 2 for &#39;22Cr&#39; or &#39;25CR&#39;.</span>
 <span class="sd">    smys : numpy.ndarray</span>
 <span class="sd">        The specified minimum yield strengths of the materials.</span>
 <span class="sd">    smts : numpy.ndarray</span>
@@ -525,6 +577,23 @@ document.write(`
 <span class="sd">    ------</span>
 <span class="sd">    ValueError</span>
 <span class="sd">        If a material is not supported.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    characteristic_material_burst_strength : Calculate the characteristic material burst strength.</span>
+<span class="sd">    wall_thickness_corroded : Calculate the corroded wall thickness.</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; outer_diameter = np.array([0.2731, 0.3239, 0.2731, 0.3239])</span>
+<span class="sd">    &gt;&gt;&gt; wall_thickness = np.array([0.0127, 0.0159, 0.0127, 0.0159])</span>
+<span class="sd">    &gt;&gt;&gt; corrosion_allowance = np.array([0.003, 0.003, 0.003, 0.003])    </span>
+<span class="sd">    &gt;&gt;&gt; materials = np.array([1, 1, 2, 2])</span>
+<span class="sd">    &gt;&gt;&gt; smys = np.array([450.0E+06, 450.0E+06, 550.0E+06, 550.0E+06])</span>
+<span class="sd">    &gt;&gt;&gt; smts = np.array([600.0E+06, 600.0E+06, 700.0E+06, 700.0E+06])</span>
+<span class="sd">    &gt;&gt;&gt; temperatures = np.array([80.0, 110.0, 80.0, 110.0])</span>
+<span class="sd">    &gt;&gt;&gt; material_strength_factor = np.array([0.96, 0.96, 0.96, 0.96])</span>
+<span class="sd">    &gt;&gt;&gt; burst_pressure(outer_diameter, wall_thickness, corrosion_allowance, materials, smys, smts, temperatures, material_strength_factor)</span>
+<span class="sd">    array([35270393.70222808, 38255444.18258572, 39189326.33580898,</span>
+<span class="sd">           41841892.07470313])</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">fcb</span> <span class="o">=</span> <span class="n">characteristic_material_burst_strength</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="n">smys</span><span class="p">,</span> <span class="n">smts</span><span class="p">,</span>
                                                  <span class="n">temperature</span><span class="p">,</span> <span class="n">material_strength_factor</span><span class="p">)</span>

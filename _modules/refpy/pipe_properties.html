@@ -361,6 +361,33 @@ document.write(`
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
+<div class="viewcode-block" id="wall_thickness_corroded">
+<a class="viewcode-back" href="../../pipe_properties.html#refpy.pipe_properties.wall_thickness_corroded">[docs]</a>
+<span class="k">def</span> <span class="nf">wall_thickness_corroded</span><span class="p">(</span><span class="n">wall_thickness</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                            <span class="n">corrosion_allowance</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the corroded wall thickness.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wall_thickness : np.ndarray</span>
+<span class="sd">        Wall thickness of the pipe.</span>
+<span class="sd">    corrosion_allowance : np.ndarray</span>
+<span class="sd">        Corrosion allowance of the pipe.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    corroded_wall_thickness : np.ndarray</span>
+<span class="sd">        Corroded wall thickness of the pipe.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; corroded_wall_thickness(np.array([0.0127, 0.0159]), np.array([0.003, 0.003]))</span>
+<span class="sd">    array([0.0097, 0.0129])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">wall_thickness</span> <span class="o">-</span> <span class="n">corrosion_allowance</span></div>
+
+
 <div class="viewcode-block" id="inner_diameter">
 <a class="viewcode-back" href="../../pipe_properties.html#refpy.pipe_properties.inner_diameter">[docs]</a>
 <span class="k">def</span> <span class="nf">inner_diameter</span><span class="p">(</span><span class="n">outer_diameter</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">wall_thickness</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>

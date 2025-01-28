@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=cf56ce1b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -42,6 +42,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'limit_states';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Pipe-Soil Interaction" href="pipe_soil_interaction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -134,8 +135,8 @@
 <nav class="navbar-nav">
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="modules.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="refpy.html">
                         API Reference
                       </a>
                     </li>
@@ -225,8 +226,6 @@ document.write(`
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -240,8 +239,8 @@ document.write(`
 <nav class="navbar-nav">
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="modules.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="refpy.html">
                         API Reference
                       </a>
                     </li>
@@ -288,6 +287,18 @@ document.write(`
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pipe_properties.html">Pipe Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lateral_buckling.html">Lateral Buckling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe_soil_interaction.html">Pipe-Soil Interaction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Limit States</a></li>
+</ul>
+</div>
+</nav></div>
         <div class="sidebar-primary-item">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
@@ -339,6 +350,9 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
+    
+    <li class="breadcrumb-item"><a href="refpy.html" class="nav-link">API Reference</a></li>
+    
     <li class="breadcrumb-item active" aria-current="page">Limit States</li>
   </ul>
 </nav>
@@ -358,31 +372,125 @@ document.write(`
                   
   <section id="module-refpy.limit_states">
 <span id="limit-states"></span><h1>Limit States<a class="headerlink" href="#module-refpy.limit_states" title="Link to this heading">#</a></h1>
-<p>Library of limit states</p>
+<p>Library of DNV limit states</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="refpy.limit_states.lcc">
-<span class="sig-prename descclassname"><span class="pre">refpy.limit_states.</span></span><span class="sig-name descname"><span class="pre">lcc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">od</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ca</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linepipe_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pe</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eaf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">safety_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/refpy/limit_states.html#lcc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.limit_states.lcc" title="Link to this definition">#</a></dt>
-<dd><p>Calculate the limit state function for local buckling.</p>
+<dt class="sig sig-object py" id="refpy.limit_states.temperature_derating_stress">
+<span class="sig-prename descclassname"><span class="pre">refpy.limit_states.</span></span><span class="sig-name descname"><span class="pre">temperature_derating_stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">material</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/refpy/limit_states.html#temperature_derating_stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.limit_states.temperature_derating_stress" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the temperature derating stress of a material.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>od</strong> (<em>float</em>) – Outer diameter of the pipe.</p></li>
-<li><p><strong>wt</strong> (<em>float</em>) – Wall thickness of the pipe.</p></li>
-<li><p><strong>ca</strong> (<em>float</em>) – Corrosion allowance.</p></li>
-<li><p><strong>linepipe_type</strong> (<em>str</em>) – Type of the linepipe (‘smls’ or ‘sawl’).</p></li>
-<li><p><strong>temp</strong> (<em>np.ndarray</em>) – Temperature array.</p></li>
-<li><p><strong>pi</strong> (<em>np.ndarray</em>) – Internal pressure array.</p></li>
-<li><p><strong>pe</strong> (<em>np.ndarray</em>) – External pressure array.</p></li>
-<li><p><strong>eaf</strong> (<em>np.ndarray</em>) – Effective axial force array.</p></li>
-<li><p><strong>bm</strong> (<em>np.ndarray</em>) – Bending moment array.</p></li>
-<li><p><strong>safety_class</strong> (<em>str</em>) – Safety class (‘Low’, ‘Medium’, or ‘High’).</p></li>
+<li><p><strong>material</strong> (<em>numpy.ndarray</em>) – The types of materials (e.g., ‘CMn’, ‘13CR’, ‘22Cr’, ‘25CR’).</p></li>
+<li><p><strong>temperature</strong> (<em>numpy.ndarray</em>) – The temperatures at which to calculate the derating stress.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>lcc</strong> – Limit state function for local buckling.</p>
+<dd class="field-even"><p>The derating stress values for the given materials and temperatures.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.ndarray</p>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If a material is not supported.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="refpy.limit_states.yield_stress">
+<span class="sig-prename descclassname"><span class="pre">refpy.limit_states.</span></span><span class="sig-name descname"><span class="pre">yield_stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">material</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material_strength_factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/refpy/limit_states.html#yield_stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.limit_states.yield_stress" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the yield stress of a material.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>material</strong> (<em>numpy.ndarray</em>) – The types of materials.</p></li>
+<li><p><strong>smys</strong> (<em>numpy.ndarray</em>) – The specified minimum yield strengths of the materials.</p></li>
+<li><p><strong>temperature</strong> (<em>numpy.ndarray</em>) – The temperatures at which to calculate the yield stress.</p></li>
+<li><p><strong>material_strength_factor</strong> (<em>np.ndarray</em>) – The material strength factor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The yield stress values of the materials at the given temperatures
+and strength factor.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="refpy.limit_states.tensile_strength">
+<span class="sig-prename descclassname"><span class="pre">refpy.limit_states.</span></span><span class="sig-name descname"><span class="pre">tensile_strength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">material</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material_strength_factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/refpy/limit_states.html#tensile_strength"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.limit_states.tensile_strength" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the tensile strength of a material.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>material</strong> (<em>numpy.ndarray</em>) – The types of materials.</p></li>
+<li><p><strong>smts</strong> (<em>numpy.ndarray</em>) – The specified minimum tensile strengths of the materials.</p></li>
+<li><p><strong>temperature</strong> (<em>numpy.ndarray</em>) – The temperatures at which to calculate the tensile strength.</p></li>
+<li><p><strong>material_strength_factor</strong> (<em>numpy.ndarray</em>) – The material strength factor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The tensile strength values of the materials at the given temperatures
+and strength factor.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="refpy.limit_states.characteristic_material_burst_strength">
+<span class="sig-prename descclassname"><span class="pre">refpy.limit_states.</span></span><span class="sig-name descname"><span class="pre">characteristic_material_burst_strength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material_strength_factor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/refpy/limit_states.html#characteristic_material_burst_strength"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.limit_states.characteristic_material_burst_strength" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the characteristic material burst strength.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>material</strong> (<em>numpy.ndarray</em>) – The types of materials.</p></li>
+<li><p><strong>smys</strong> (<em>numpy.ndarray</em>) – The specified minimum yield strengths of the materials.</p></li>
+<li><p><strong>smts</strong> (<em>numpy.ndarray</em>) – The specified minimum tensile strengths of the materials.</p></li>
+<li><p><strong>temperature</strong> (<em>numpy.ndarray</em>) – The temperatures at which to calculate the burst strength.</p></li>
+<li><p><strong>material_strength_factor</strong> (<em>numpy.ndarray</em>) – The material strength factor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The characteristic material burst strength values of the materials
+at the given temperatures and strength factor.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="refpy.limit_states.burst_pressure">
+<span class="sig-prename descclassname"><span class="pre">refpy.limit_states.</span></span><span class="sig-name descname"><span class="pre">burst_pressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outer_diameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wall_thickness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corrosion_allowance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material_strength_factor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/refpy/limit_states.html#burst_pressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.limit_states.burst_pressure" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the burst pressure of a pipeline.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>outer_diameter</strong> (<em>float</em>) – The outer diameter of the pipeline.</p></li>
+<li><p><strong>wall_thickness</strong> (<em>float</em>) – The wall thickness of the pipeline.</p></li>
+<li><p><strong>corrosion_allowance</strong> (<em>float</em>) – The corrosion allowance to be subtracted from the wall thickness.</p></li>
+<li><p><strong>material</strong> (<em>numpy.ndarray</em>) – The types of materials (e.g., ‘CMn’, ‘13CR’, ‘22Cr’, ‘25CR’).</p></li>
+<li><p><strong>smys</strong> (<em>numpy.ndarray</em>) – The specified minimum yield strengths of the materials.</p></li>
+<li><p><strong>smts</strong> (<em>numpy.ndarray</em>) – The specified minimum tensile strengths of the materials.</p></li>
+<li><p><strong>temperature</strong> (<em>numpy.ndarray</em>) – The temperatures at which to calculate the burst pressure.</p></li>
+<li><p><strong>material_strength_factor</strong> (<em>float</em>) – The material strength factor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The burst pressure values of the pipeline.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If a material is not supported.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -399,6 +507,15 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="pipe_soil_interaction.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Pipe-Soil Interaction</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -417,7 +534,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.limit_states.lcc"><code class="docutils literal notranslate"><span class="pre">lcc()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.limit_states.temperature_derating_stress"><code class="docutils literal notranslate"><span class="pre">temperature_derating_stress()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.limit_states.yield_stress"><code class="docutils literal notranslate"><span class="pre">yield_stress()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.limit_states.tensile_strength"><code class="docutils literal notranslate"><span class="pre">tensile_strength()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.limit_states.characteristic_material_burst_strength"><code class="docutils literal notranslate"><span class="pre">characteristic_material_burst_strength()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.limit_states.burst_pressure"><code class="docutils literal notranslate"><span class="pre">burst_pressure()</span></code></a></li>
 </ul>
   </nav></div>
 

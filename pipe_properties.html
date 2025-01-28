@@ -42,7 +42,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'pipe_properties';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Limit States" href="limit_states.html" />
+    <link rel="next" title="Lateral Buckling" href="lateral_buckling.html" />
     <link rel="prev" title="API Reference" href="refpy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -294,9 +294,9 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Pipe Properties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="limit_states.html">Limit States</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lateral_buckling.html">Lateral Buckling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pipe_soil_interaction.html">Pipe-Soil Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limit_states.html">Limit States</a></li>
 </ul>
 </div>
 </nav></div>
@@ -374,6 +374,31 @@ document.write(`
   <section id="module-refpy.pipe_properties">
 <span id="pipe-properties"></span><h1>Pipe Properties<a class="headerlink" href="#module-refpy.pipe_properties" title="Link to this heading">#</a></h1>
 <p>Library of pipeline main properties</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="refpy.pipe_properties.wall_thickness_corroded">
+<span class="sig-prename descclassname"><span class="pre">refpy.pipe_properties.</span></span><span class="sig-name descname"><span class="pre">wall_thickness_corroded</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wall_thickness</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corrosion_allowance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/refpy/pipe_properties.html#wall_thickness_corroded"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.pipe_properties.wall_thickness_corroded" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the corroded wall thickness.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wall_thickness</strong> (<em>np.ndarray</em>) – Wall thickness of the pipe.</p></li>
+<li><p><strong>corrosion_allowance</strong> (<em>np.ndarray</em>) – Corrosion allowance of the pipe.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>corroded_wall_thickness</strong> – Corroded wall thickness of the pipe.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">corroded_wall_thickness</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0127</span><span class="p">,</span> <span class="mf">0.0159</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.003</span><span class="p">,</span> <span class="mf">0.003</span><span class="p">]))</span>
+<span class="go">array([0.0097, 0.0129])</span>
+</pre></div>
+</div>
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="refpy.pipe_properties.inner_diameter">
 <span class="sig-prename descclassname"><span class="pre">refpy.pipe_properties.</span></span><span class="sig-name descname"><span class="pre">inner_diameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outer_diameter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wall_thickness</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/refpy/pipe_properties.html#inner_diameter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.pipe_properties.inner_diameter" title="Link to this definition">#</a></dt>
@@ -691,11 +716,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="limit_states.html"
+       href="lateral_buckling.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Limit States</p>
+        <p class="prev-next-title">Lateral Buckling</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -717,6 +742,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.pipe_properties.wall_thickness_corroded"><code class="docutils literal notranslate"><span class="pre">wall_thickness_corroded()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.pipe_properties.inner_diameter"><code class="docutils literal notranslate"><span class="pre">inner_diameter()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.pipe_properties.inner_area"><code class="docutils literal notranslate"><span class="pre">inner_area()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.pipe_properties.outer_area"><code class="docutils literal notranslate"><span class="pre">outer_area()</span></code></a></li>
