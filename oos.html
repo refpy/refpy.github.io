@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Lateral Buckling &#8212; RefPy v0.1.9 documentation</title>
+    <title>OOS &#8212; RefPy v0.1.9 documentation</title>
   
   
   
@@ -42,11 +42,9 @@
     <script src="_static/documentation_options.js?v=bb01e3b6"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lateral_buckling';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'oos';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pipe-Soil Interaction" href="pipe_soil_interaction.html" />
-    <link rel="prev" title="DNV Limit States" href="limit_states_dnv.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -131,7 +129,7 @@
 <nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-<li class="nav-item current active">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="refpy.html">
     API Reference
   </a>
@@ -210,6 +208,8 @@
       
       
       
+        
+      
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
@@ -226,7 +226,7 @@
 <nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-<li class="nav-item current active">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="refpy.html">
     API Reference
   </a>
@@ -271,18 +271,6 @@
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-<nav class="bd-docs-nav bd-links"
-     aria-label="Section Navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="pipe_properties.html">Pipe Properties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="limit_states_dnv.html">DNV Limit States</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lateral Buckling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pipe_soil_interaction.html">Pipe-Soil Interaction</a></li>
-</ul>
-</div>
-</nav></div>
         <div class="sidebar-primary-item">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
@@ -336,10 +324,7 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    
-    <li class="breadcrumb-item"><a href="refpy.html" class="nav-link">API Reference</a></li>
-    
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Lateral Buckling</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">OOS</span></li>
   </ul>
 </nav>
 </div>
@@ -356,49 +341,25 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="module-refpy.lateral_buckling">
-<span id="lateral-buckling"></span><h1>Lateral Buckling<a class="headerlink" href="#module-refpy.lateral_buckling" title="Link to this heading">#</a></h1>
-<p>Library of lateral buckling calculations</p>
+  <section id="module-refpy.oos">
+<span id="oos"></span><h1>OOS<a class="headerlink" href="#module-refpy.oos" title="Link to this heading">#</a></h1>
+<p>This library performs various calculations to analyse the OOS data.</p>
 <dl class="py class">
-<dt class="sig sig-object py" id="refpy.lateral_buckling.LateralBuckling">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">refpy.lateral_buckling.</span></span><span class="sig-name descname"><span class="pre">LateralBuckling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction_factor_le</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction_factor_be</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction_factor_he</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction_factor_fit_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/refpy/lateral_buckling.html#LateralBuckling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.lateral_buckling.LateralBuckling" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="refpy.oos.OOSAnonymisation">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">refpy.oos.</span></span><span class="sig-name descname"><span class="pre">OOSAnonymisation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">route_development</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">route_pipeline_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">route_pipeline</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">route_kp_from</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">route_kp_to</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">route_pipeline_section_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">route_curve_radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey_development</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey_pipeline_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey_pipeline</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey_kp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey_easting</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey_northing</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/refpy/oos.html#OOSAnonymisation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.oos.OOSAnonymisation" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Class for lateral buckling calculations, including friction factor distribution fitting.</p>
+<p>Processor for Out-Of-Straightness (OOS) pipeline survey and route data.
+Provides methods for cleaning, sectioning, and coordinate normalization.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="refpy.lateral_buckling.LateralBuckling.friction_distribution">
-<span class="sig-name descname"><span class="pre">friction_distribution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/refpy/lateral_buckling.html#LateralBuckling.friction_distribution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.lateral_buckling.LateralBuckling.friction_distribution" title="Link to this definition">#</a></dt>
-<dd><p>Compute the parameters of the lognormal friction factor distribution (axial or lateral)
-by minimizing the root mean square error (RMSE) between geotechnical estimates and
-back-calculated friction factors from the lognormal distribution.</p>
+<dt class="sig sig-object py" id="refpy.oos.OOSAnonymisation.process">
+<span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">anonymise</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/refpy/oos.html#OOSAnonymisation.process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.oos.OOSAnonymisation.process" title="Link to this definition">#</a></dt>
+<dd><p>Run the OOS processing pipeline.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><ul class="simple">
-<li><p><strong>mean_friction</strong> (<em>np.ndarray</em>) – Array of mean values of the lognormal friction factor distribution.</p></li>
-<li><p><strong>std_friction</strong> (<em>np.ndarray</em>) – Array of standard deviation values of the lognormal friction factor distribution.</p></li>
-<li><p><strong>location_param</strong> (<em>np.ndarray</em>) – Array of location parameters of the lognormal friction factor distribution.</p></li>
-<li><p><strong>scale_param</strong> (<em>np.ndarray</em>) – Array of scale parameters of the lognormal friction factor distribution.</p></li>
-<li><p><strong>le_fit</strong> (<em>np.ndarray</em>) – Array of fitted LE values.</p></li>
-<li><p><strong>be_fit</strong> (<em>np.ndarray</em>) – Array of fitted BE values.</p></li>
-<li><p><strong>he_fit</strong> (<em>np.ndarray</em>) – Array of fitted HE values.</p></li>
-<li><p><strong>rmse</strong> (<em>np.ndarray</em>) – Array of RMSE values for the best fit type.</p></li>
-</ul>
-</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>anonymise</strong> (<em>bool</em><em>, </em><em>default False</em>) – If True, runs the full anonymisation pipeline (with cleaning and grouping).
+If False, runs only the basic section processing.</p>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<p>The function calculates the parameters of the lognormal friction factor distribution
-based on LE at 5th percentile, BE at 50th percentile, and HE at 95th percentile</p>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lb</span> <span class="o">=</span> <span class="n">LateralBuckling</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="n">friction_factor_le</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">],</span>
-<span class="gp">... </span>    <span class="n">friction_factor_be</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">],</span>
-<span class="gp">... </span>    <span class="n">friction_factor_he</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">],</span>
-<span class="gp">... </span>    <span class="n">friction_factor_fit_type</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;LE_BE_HE&#39;</span><span class="p">]</span>
-<span class="gp">... </span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">lb</span><span class="o">.</span><span class="n">friction_distribution</span><span class="p">()</span>
-<span class="go">(array([0.9684083]), array([0.30043236]), array([-0.07804666]), array([0.3031342]), array([0.56177265]), array([0.92492127]), array([1.52282131]), array([0.05765844]))</span>
-</pre></div>
-</div>
 </dd></dl>
 
 </dd></dl>
@@ -415,24 +376,6 @@ based on LE at 5th percentile, BE at 50th percentile, and HE at 95th percentile<
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="limit_states_dnv.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">DNV Limit States</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="pipe_soil_interaction.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pipe-Soil Interaction</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -452,8 +395,8 @@ based on LE at 5th percentile, BE at 50th percentile, and HE at 95th percentile<
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.lateral_buckling.LateralBuckling"><code class="docutils literal notranslate"><span class="pre">LateralBuckling</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.lateral_buckling.LateralBuckling.friction_distribution"><code class="docutils literal notranslate"><span class="pre">LateralBuckling.friction_distribution()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.oos.OOSAnonymisation"><code class="docutils literal notranslate"><span class="pre">OOSAnonymisation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.oos.OOSAnonymisation.process"><code class="docutils literal notranslate"><span class="pre">OOSAnonymisation.process()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -463,7 +406,7 @@ based on LE at 5th percentile, BE at 50th percentile, and HE at 95th percentile<
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/lateral_buckling.rst.txt"
+      <li><a href="_sources/oos.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>

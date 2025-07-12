@@ -7,42 +7,46 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>refpy.lateral_buckling &#8212; RefPy v0.1 documentation</title>
+    <title>refpy.lateral_buckling &#8212; RefPy v0.1.9 documentation</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=cf56ce1b" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=b32bce50"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/documentation_options.js?v=bb01e3b6"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/refpy/lateral_buckling';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -50,31 +54,16 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -82,7 +71,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search the docs ..."
          aria-label="Search the docs ..."
          autocomplete="off"
@@ -90,20 +78,27 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <label class="sidebar-toggle primary-toggle" for="__primary">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
-  </label>
+  </button>
   
   
   <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../../index.html">
@@ -117,8 +112,8 @@
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="RefPy v0.1 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/logo_dark.png" class="logo__image only-dark" alt="RefPy v0.1 documentation - Home"/>`);</script>
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="RefPy v0.1.9 documentation - Home"/>
+    <img src="../../_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="RefPy v0.1.9 documentation - Home"/>
   
   
 </a></div>
@@ -130,15 +125,15 @@
     <div class="me-auto navbar-header-items__center">
       
         <div class="navbar-item">
-<nav class="navbar-nav">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../refpy.html">
-                        API Reference
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../refpy.html">
+    API Reference
+  </a>
+</li>
+
   </ul>
 </nav></div>
       
@@ -150,31 +145,23 @@
         <div class="navbar-item navbar-persistent--container">
           
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
         </div>
       
       
         <div class="navbar-item">
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script></div>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
       
-        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+        <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
         <li class="nav-item">
           
@@ -185,7 +172,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/refpy/refpy/" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github fa-lg" aria-hidden="true"></i></span>
+          <a href="https://github.com/refpy/refpy/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
@@ -197,15 +184,11 @@ document.write(`
   
     <div class="navbar-persistent--mobile">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
     </div>
   
 
@@ -222,7 +205,8 @@ document.write(`
       
         
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -231,18 +215,21 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item">
-<nav class="navbar-nav">
+          
+          
+            <div class="navbar-item">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../refpy.html">
-                        API Reference
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../refpy.html">
+    API Reference
+  </a>
+</li>
+
   </ul>
 </nav></div>
+          
         
       </div>
     
@@ -252,17 +239,13 @@ document.write(`
         
           <div class="navbar-item">
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script></div>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
         
-          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+          <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
         <li class="nav-item">
           
@@ -273,7 +256,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/refpy/refpy/" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github fa-lg" aria-hidden="true"></i></span>
+          <a href="https://github.com/refpy/refpy/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
@@ -291,7 +274,6 @@ document.write(`
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search the docs ..."
          aria-label="Search the docs ..."
          autocomplete="off"
@@ -304,29 +286,32 @@ document.write(`
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
         <div class="header-article-item">
 
-
-
-<nav aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb" class="d-print-none">
   <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
@@ -337,7 +322,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">refpy.latera...</li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">refpy.lateral_buckling</span></li>
   </ul>
 </nav>
 </div>
@@ -359,114 +344,193 @@ document.write(`
 <span class="sd">Library of lateral buckling calculations</span>
 <span class="sd">&#39;&#39;&#39;</span>
 
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">lognorm</span>
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">lognorm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize</span>
 
-<div class="viewcode-block" id="friction_distribution">
-<a class="viewcode-back" href="../../lateral_buckling.html#refpy.lateral_buckling.friction_distribution">[docs]</a>
-<span class="k">def</span> <span class="nf">friction_distribution</span><span class="p">(</span><span class="n">low_estimate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">best_estimate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
-                          <span class="n">high_estimate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">fit_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span>
-                              <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Compute the parameters of the lognormal friction factor distribution (axial or lateral)</span>
-<span class="sd">    by minimising the root mean square error (RMSE) between geotechnical estimates and</span>
-<span class="sd">    back-calculated friction factors from the lognormal distribution.</span>
+<div class="viewcode-block" id="LateralBuckling">
+<a class="viewcode-back" href="../../lateral_buckling.html#refpy.lateral_buckling.LateralBuckling">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">LateralBuckling</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class for lateral buckling calculations, including friction factor distribution fitting.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="o">*</span><span class="p">,</span>
+            <span class="n">friction_factor_le</span><span class="p">,</span>
+            <span class="n">friction_factor_be</span><span class="p">,</span>
+            <span class="n">friction_factor_he</span><span class="p">,</span>
+            <span class="n">friction_factor_fit_type</span>
+        <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize with geotechnical friction factor estimates and fit type.</span>
 
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    low_estimate : float</span>
-<span class="sd">       Low estimate (LE) friction factor, representing the 5th percentile.</span>
-<span class="sd">    best_estimate : float</span>
-<span class="sd">        Best estimate (BE) friction factor, representing the 50th percentile.</span>
-<span class="sd">    high_estimate : float</span>
-<span class="sd">        High estimate (HE) friction factor, representing the 95th percentile.</span>
-<span class="sd">    fit_type : str</span>
-<span class="sd">        Type of fit to perform: &#39;LE_BE_HE&#39; (fit to LE, BE, and HE), &#39;LE_BE&#39; (fit to LE and BE),</span>
-<span class="sd">        or &#39;BE_HE&#39; (fit to BE and HE).</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        friction_factor_le : float</span>
+<span class="sd">            Low estimate (LE) friction factor, representing the 5th percentile.</span>
+<span class="sd">        friction_factor_be : float</span>
+<span class="sd">            Best estimate (BE) friction factor, representing the 50th percentile.</span>
+<span class="sd">        friction_factor_he : float</span>
+<span class="sd">            High estimate (HE) friction factor, representing the 95th percentile.</span>
+<span class="sd">        friction_factor_fit_type : str</span>
+<span class="sd">            Type of fit to perform: &#39;LE_BE_HE&#39;, &#39;LE_BE&#39;, or &#39;BE_HE&#39;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_le</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_le</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_be</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_be</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_he</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_he</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_fit_type</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_fit_type</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">object</span><span class="p">)</span>
 
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    mean_friction : float</span>
-<span class="sd">        Mean of the lognormal friction factor distribution.</span>
-<span class="sd">    std_friction : float</span>
-<span class="sd">        Standard deviation of the lognormal friction factor distribution.</span>
-<span class="sd">    location_param : float</span>
-<span class="sd">        Location parameter of the lognormal friction factor distribution.</span>
-<span class="sd">    scale_param : float</span>
-<span class="sd">        Scale parameter of the lognormal friction factor distribution.</span>
-<span class="sd">    rmse_le_be_he : float</span>
-<span class="sd">        RMSE for the &#39;LE_BE_HE&#39; fit type.</span>
-<span class="sd">    rmse_le_be : float</span>
-<span class="sd">        RMSE for the &#39;LE_BE&#39; fit type.</span>
-<span class="sd">    rmse_be_he : float</span>
-<span class="sd">        RMSE for the &#39;BE_HE&#39; fit type.</span>
-<span class="sd">    rmse_best_fit : float</span>
-<span class="sd">        RMSE for the best fit type.</span>
+<div class="viewcode-block" id="LateralBuckling.friction_distribution">
+<a class="viewcode-back" href="../../lateral_buckling.html#refpy.lateral_buckling.LateralBuckling.friction_distribution">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">friction_distribution</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the parameters of the lognormal friction factor distribution (axial or lateral)</span>
+<span class="sd">        by minimizing the root mean square error (RMSE) between geotechnical estimates and</span>
+<span class="sd">        back-calculated friction factors from the lognormal distribution.</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    The function calculates the parameters of the lognormal friction factor distribution</span>
-<span class="sd">    based on LE at 5th percentile, BE at 50th percentile, and HE at 95th percentile</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        mean_friction : np.ndarray</span>
+<span class="sd">            Array of mean values of the lognormal friction factor distribution.</span>
+<span class="sd">        std_friction : np.ndarray</span>
+<span class="sd">            Array of standard deviation values of the lognormal friction factor distribution.</span>
+<span class="sd">        location_param : np.ndarray</span>
+<span class="sd">            Array of location parameters of the lognormal friction factor distribution.</span>
+<span class="sd">        scale_param : np.ndarray</span>
+<span class="sd">            Array of scale parameters of the lognormal friction factor distribution.</span>
+<span class="sd">        le_fit : np.ndarray</span>
+<span class="sd">            Array of fitted LE values.</span>
+<span class="sd">        be_fit : np.ndarray</span>
+<span class="sd">            Array of fitted BE values.</span>
+<span class="sd">        he_fit : np.ndarray</span>
+<span class="sd">            Array of fitted HE values.</span>
+<span class="sd">        rmse : np.ndarray</span>
+<span class="sd">            Array of RMSE values for the best fit type.</span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The function calculates the parameters of the lognormal friction factor distribution</span>
+<span class="sd">        based on LE at 5th percentile, BE at 50th percentile, and HE at 95th percentile</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; friction_distribution(0.5, 1.0, 1.5, &#39;LE_BE_HE&#39;)</span>
-<span class="sd">    (np.float64(0.9684082990173732), np.float64(0.30043235817282576), np.float64(-0.0780466572081312), np.float64(0.3031342048564706), np.float64(0.5617726470692103), np.float64(0.9249212712925357), np.float64(1.5228213095679706), np.float64(0.05765844141916946))</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; lb = LateralBuckling(</span>
+<span class="sd">        ...     friction_factor_le=[0.5],</span>
+<span class="sd">        ...     friction_factor_be=[1.0],</span>
+<span class="sd">        ...     friction_factor_he=[1.5],</span>
+<span class="sd">        ...     friction_factor_fit_type=[&#39;LE_BE_HE&#39;]</span>
+<span class="sd">        ... )</span>
+<span class="sd">        &gt;&gt;&gt; lb.friction_distribution()</span>
+<span class="sd">        (array([0.9684083]), array([0.30043236]), array([-0.07804666]), array([0.3031342]), array([0.56177265]), array([0.92492127]), array([1.52282131]), array([0.05765844]))</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Initialize lists to store results</span>
+        <span class="n">mean_friction_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">std_friction_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">location_param_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">scale_param_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">le_fit_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">be_fit_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">he_fit_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">rmse_list</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="c1"># Calculate RMSE based on the parameters location and scale</span>
-    <span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
-        <span class="n">location_param</span><span class="p">,</span> <span class="n">scale_param</span> <span class="o">=</span> <span class="n">params</span>
-        <span class="k">if</span> <span class="n">fit_type</span> <span class="o">==</span> <span class="s1">&#39;LE_BE_HE&#39;</span><span class="p">:</span>
+        <span class="c1"># Define the objective function</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">objective</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">friction_factor_le</span><span class="p">,</span> <span class="n">friction_factor_be</span><span class="p">,</span> <span class="n">friction_factor_he</span><span class="p">,</span> <span class="n">friction_factor_fit_type</span><span class="p">):</span>
+            <span class="n">location_param</span><span class="p">,</span> <span class="n">scale_param</span> <span class="o">=</span> <span class="n">params</span>
+            <span class="k">if</span> <span class="n">friction_factor_fit_type</span> <span class="o">==</span> <span class="s1">&#39;LE_BE_HE&#39;</span><span class="p">:</span>
+                <span class="n">le_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+                <span class="n">be_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.50</span><span class="p">)</span>
+                <span class="n">he_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)</span>
+                <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                    <span class="p">((</span><span class="n">le_fit</span> <span class="o">-</span> <span class="n">friction_factor_le</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">friction_factor_be</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+                     <span class="o">+</span> <span class="p">(</span><span class="n">he_fit</span> <span class="o">-</span> <span class="n">friction_factor_he</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3.0</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">friction_factor_fit_type</span> <span class="o">==</span> <span class="s1">&#39;LE_BE&#39;</span><span class="p">:</span>
+                <span class="n">le_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+                <span class="n">be_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.50</span><span class="p">)</span>
+                <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                    <span class="p">((</span><span class="n">le_fit</span> <span class="o">-</span> <span class="n">friction_factor_le</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">friction_factor_be</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">friction_factor_fit_type</span> <span class="o">==</span> <span class="s1">&#39;BE_HE&#39;</span><span class="p">:</span>
+                <span class="n">be_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.50</span><span class="p">)</span>
+                <span class="n">he_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)</span>
+                <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                    <span class="p">((</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">friction_factor_be</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">he_fit</span> <span class="o">-</span> <span class="n">friction_factor_he</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="k">return</span> <span class="n">error</span>
+
+        <span class="c1"># Loop through the friction factor arrays</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">friction_factor_le</span><span class="p">,</span> <span class="n">friction_factor_be</span><span class="p">,</span> <span class="n">friction_factor_he</span><span class="p">,</span> <span class="n">friction_factor_fit_type</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+            <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_le</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_be</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_he</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_fit_type</span><span class="p">)</span>
+        <span class="p">):</span>
+            <span class="n">initial_location</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_le</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_be</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_he</span><span class="p">)]</span>
+            <span class="p">)</span>
+            <span class="n">initial_scale</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_le</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_be</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_he</span><span class="p">)],</span>
+                <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span>
+            <span class="p">)</span>
+            <span class="n">initial_guess</span> <span class="o">=</span> <span class="p">[</span><span class="n">initial_location</span><span class="p">,</span> <span class="n">initial_scale</span><span class="p">]</span>
+
+            <span class="c1"># Use minimize to find the parameters that minimize RMSE</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span>
+                <span class="n">objective</span><span class="p">,</span>
+                <span class="n">initial_guess</span><span class="p">,</span>
+                <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">friction_factor_le</span><span class="p">,</span> <span class="n">friction_factor_be</span><span class="p">,</span> <span class="n">friction_factor_he</span><span class="p">,</span> <span class="n">friction_factor_fit_type</span><span class="p">),</span>
+                <span class="n">method</span><span class="o">=</span><span class="s1">&#39;Nelder-Mead&#39;</span>
+            <span class="p">)</span>
+            <span class="n">location_param</span><span class="p">,</span> <span class="n">scale_param</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span>
+
+            <span class="c1"># Calculate lognormal parameters based on the optimized lognormal distribution</span>
+            <span class="n">mean_friction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span> <span class="o">+</span> <span class="n">scale_param</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">std_friction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">scale_param</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> \
+                                   <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">location_param</span> <span class="o">+</span> <span class="n">scale_param</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+            <span class="c1"># Calculate the fitted values</span>
             <span class="n">le_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
             <span class="n">be_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.50</span><span class="p">)</span>
             <span class="n">he_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)</span>
-            <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(((</span><span class="n">le_fit</span> <span class="o">-</span> <span class="n">low_estimate</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">best_estimate</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-                             <span class="o">+</span> <span class="p">(</span><span class="n">he_fit</span> <span class="o">-</span> <span class="n">high_estimate</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">fit_type</span> <span class="o">==</span> <span class="s1">&#39;LE_BE&#39;</span><span class="p">:</span>
-            <span class="n">le_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
-            <span class="n">be_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.50</span><span class="p">)</span>
-            <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(((</span><span class="n">le_fit</span> <span class="o">-</span> <span class="n">low_estimate</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">best_estimate</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">fit_type</span> <span class="o">==</span> <span class="s1">&#39;BE_HE&#39;</span><span class="p">:</span>
-            <span class="n">be_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.50</span><span class="p">)</span>
-            <span class="n">he_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)</span>
-            <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(((</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">best_estimate</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">he_fit</span> <span class="o">-</span> <span class="n">high_estimate</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">error</span> <span class="o">=</span> <span class="mf">1.0E+06</span>
-        <span class="k">return</span> <span class="n">error</span>
 
-    <span class="c1"># Random initial guess</span>
-    <span class="n">initial_location</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">low_estimate</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">best_estimate</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">high_estimate</span><span class="p">)])</span>
-    <span class="n">initial_scale</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">low_estimate</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">best_estimate</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">high_estimate</span><span class="p">)],</span>
-                           <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">initial_guess</span> <span class="o">=</span> <span class="p">[</span><span class="n">initial_location</span><span class="p">,</span> <span class="n">initial_scale</span><span class="p">]</span>
+            <span class="c1"># Calculate RMSE</span>
+            <span class="k">if</span> <span class="n">friction_factor_fit_type</span> <span class="o">==</span> <span class="s1">&#39;LE_BE_HE&#39;</span><span class="p">:</span>
+                <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                    <span class="p">((</span><span class="n">le_fit</span> <span class="o">-</span> <span class="n">friction_factor_le</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">friction_factor_be</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span>\
+                                <span class="p">(</span><span class="n">he_fit</span> <span class="o">-</span> <span class="n">friction_factor_he</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3.0</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">friction_factor_fit_type</span> <span class="o">==</span> <span class="s1">&#39;LE_BE&#39;</span><span class="p">:</span>
+                <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                    <span class="p">((</span><span class="n">le_fit</span> <span class="o">-</span> <span class="n">friction_factor_le</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">friction_factor_be</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">friction_factor_fit_type</span> <span class="o">==</span> <span class="s1">&#39;BE_HE&#39;</span><span class="p">:</span>
+                <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                    <span class="p">((</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">friction_factor_be</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">he_fit</span> <span class="o">-</span> <span class="n">friction_factor_he</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 
-    <span class="c1"># Use minimize to find the parameters that minimize RMSE</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">initial_guess</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;Nelder-Mead&#39;</span><span class="p">)</span>
-    <span class="n">location_param</span><span class="p">,</span> <span class="n">scale_param</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span>
+            <span class="c1"># Append results for this iteration</span>
+            <span class="n">mean_friction_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mean_friction</span><span class="p">)</span>
+            <span class="n">std_friction_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">std_friction</span><span class="p">)</span>
+            <span class="n">location_param_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">location_param</span><span class="p">)</span>
+            <span class="n">scale_param_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scale_param</span><span class="p">)</span>
+            <span class="n">le_fit_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">le_fit</span><span class="p">)</span>
+            <span class="n">be_fit_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">be_fit</span><span class="p">)</span>
+            <span class="n">he_fit_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">he_fit</span><span class="p">)</span>
+            <span class="n">rmse_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
 
-    <span class="c1"># Calculate lognormal parameters based on the optimized lognormal distribution</span>
-    <span class="n">mean_friction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span> <span class="o">+</span> <span class="n">scale_param</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="n">std_friction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">scale_param</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> \
-                           <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">location_param</span> <span class="o">+</span> <span class="n">scale_param</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+        <span class="c1"># Convert lists to NumPy arrays</span>
+        <span class="n">mean_friction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mean_friction_list</span><span class="p">)</span>
+        <span class="n">std_friction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">std_friction_list</span><span class="p">)</span>
+        <span class="n">location_param</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">location_param_list</span><span class="p">)</span>
+        <span class="n">scale_param</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">scale_param_list</span><span class="p">)</span>
+        <span class="n">le_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">le_fit_list</span><span class="p">)</span>
+        <span class="n">be_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">be_fit_list</span><span class="p">)</span>
+        <span class="n">he_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">he_fit_list</span><span class="p">)</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rmse_list</span><span class="p">)</span>
 
-    <span class="c1"># Calculate the fitted values</span>
-    <span class="n">le_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
-    <span class="n">be_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.50</span><span class="p">)</span>
-    <span class="n">he_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)</span>
-
-    <span class="c1"># Calculate RMSE</span>
-    <span class="k">if</span> <span class="n">fit_type</span> <span class="o">==</span> <span class="s1">&#39;LE_BE_HE&#39;</span><span class="p">:</span>
-        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(((</span><span class="n">le_fit</span> <span class="o">-</span> <span class="n">low_estimate</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">best_estimate</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span>\
-                        <span class="p">(</span><span class="n">he_fit</span> <span class="o">-</span> <span class="n">high_estimate</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">fit_type</span> <span class="o">==</span> <span class="s1">&#39;LE_BE&#39;</span><span class="p">:</span>
-        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(((</span><span class="n">le_fit</span> <span class="o">-</span> <span class="n">low_estimate</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">best_estimate</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">fit_type</span> <span class="o">==</span> <span class="s1">&#39;BE_HE&#39;</span><span class="p">:</span>
-        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(((</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">best_estimate</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">he_fit</span> <span class="o">-</span> <span class="n">high_estimate</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">mean_friction</span><span class="p">,</span> <span class="n">std_friction</span><span class="p">,</span> <span class="n">location_param</span><span class="p">,</span> <span class="n">scale_param</span><span class="p">,</span> <span class="n">le_fit</span><span class="p">,</span> <span class="n">be_fit</span><span class="p">,</span> <span class="n">he_fit</span><span class="p">,</span> <span class="n">rmse</span></div>
+        <span class="k">return</span> <span class="n">mean_friction</span><span class="p">,</span> <span class="n">std_friction</span><span class="p">,</span> <span class="n">location_param</span><span class="p">,</span> <span class="n">scale_param</span><span class="p">,</span> <span class="n">le_fit</span><span class="p">,</span> <span class="n">be_fit</span><span class="p">,</span> <span class="n">he_fit</span><span class="p">,</span> <span class="n">rmse</span></div>
+</div>
 
 </pre></div>
 
@@ -476,7 +540,7 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
 </div>
@@ -485,8 +549,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
@@ -499,8 +561,8 @@ document.write(`
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -525,7 +587,8 @@ document.write(`
       
         <div class="footer-item">
 <p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
 </p></div>
       
     </div>

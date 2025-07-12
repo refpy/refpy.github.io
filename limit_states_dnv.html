@@ -8,36 +8,39 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>DNV Limit States &#8212; RefPy v0.1 documentation</title>
+    <title>DNV Limit States &#8212; RefPy v0.1.9 documentation</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=cf56ce1b" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="_static/documentation_options.js?v=b32bce50"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/documentation_options.js?v=bb01e3b6"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'limit_states_dnv';</script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -46,6 +49,7 @@
     <link rel="prev" title="Pipe Properties" href="pipe_properties.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -53,31 +57,16 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -85,7 +74,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search the docs ..."
          aria-label="Search the docs ..."
          autocomplete="off"
@@ -93,20 +81,27 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <label class="sidebar-toggle primary-toggle" for="__primary">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
-  </label>
+  </button>
   
   
   <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -120,8 +115,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="RefPy v0.1 documentation - Home"/>
-    <script>document.write(`<img src="_static/logo_dark.png" class="logo__image only-dark" alt="RefPy v0.1 documentation - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="RefPy v0.1.9 documentation - Home"/>
+    <img src="_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="RefPy v0.1.9 documentation - Home"/>
   
   
 </a></div>
@@ -133,15 +128,15 @@
     <div class="me-auto navbar-header-items__center">
       
         <div class="navbar-item">
-<nav class="navbar-nav">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="refpy.html">
-                        API Reference
-                      </a>
-                    </li>
-                
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="refpy.html">
+    API Reference
+  </a>
+</li>
+
   </ul>
 </nav></div>
       
@@ -153,31 +148,23 @@
         <div class="navbar-item navbar-persistent--container">
           
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
         </div>
       
       
         <div class="navbar-item">
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script></div>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
       
-        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+        <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
         <li class="nav-item">
           
@@ -188,7 +175,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/refpy/refpy/" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github fa-lg" aria-hidden="true"></i></span>
+          <a href="https://github.com/refpy/refpy/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
@@ -200,22 +187,18 @@ document.write(`
   
     <div class="navbar-persistent--mobile">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
       <span class="fa-solid fa-outdent"></span>
-    </label>
+    </button>
   
 </div>
 
@@ -227,7 +210,8 @@ document.write(`
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -236,18 +220,21 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item">
-<nav class="navbar-nav">
+          
+          
+            <div class="navbar-item">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="refpy.html">
-                        API Reference
-                      </a>
-                    </li>
-                
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="refpy.html">
+    API Reference
+  </a>
+</li>
+
   </ul>
 </nav></div>
+          
         
       </div>
     
@@ -257,17 +244,13 @@ document.write(`
         
           <div class="navbar-item">
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script></div>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
         
-          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+          <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
         <li class="nav-item">
           
@@ -278,7 +261,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/refpy/refpy/" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github fa-lg" aria-hidden="true"></i></span>
+          <a href="https://github.com/refpy/refpy/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
@@ -308,7 +291,6 @@ document.write(`
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search the docs ..."
          aria-label="Search the docs ..."
          autocomplete="off"
@@ -321,29 +303,32 @@ document.write(`
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
         <div class="header-article-item">
 
-
-
-<nav aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb" class="d-print-none">
   <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
@@ -354,7 +339,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="refpy.html" class="nav-link">API Reference</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">DNV Limit States</li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">DNV Limit States</span></li>
   </ul>
 </nav>
 </div>
@@ -371,207 +356,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="module-refpy.limit_states_dnv">
-<span id="dnv-limit-states"></span><h1>DNV Limit States<a class="headerlink" href="#module-refpy.limit_states_dnv" title="Link to this heading">#</a></h1>
-<p>Library of DNV limit states</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="refpy.limit_states_dnv.temperature_derating_stress">
-<span class="sig-prename descclassname"><span class="pre">refpy.limit_states_dnv.</span></span><span class="sig-name descname"><span class="pre">temperature_derating_stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">material</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/refpy/limit_states_dnv.html#temperature_derating_stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.limit_states_dnv.temperature_derating_stress" title="Link to this definition">#</a></dt>
-<dd><p>Calculate the temperature derating stress of a material.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>material</strong> (<em>numpy.ndarray</em>) – The types of materials: 1 for ‘CMn’ or ‘13CR’ &amp; 2 for ‘22Cr’ or ‘25CR’.</p></li>
-<li><p><strong>temperature</strong> (<em>numpy.ndarray</em>) – The temperatures at which to calculate the derating stress.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The derating stress values for the given materials and temperatures.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>numpy.ndarray</p>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If a material is not supported.</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">materials</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">temperatures</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">80.0</span><span class="p">,</span> <span class="mf">110.0</span><span class="p">,</span> <span class="mf">80.0</span><span class="p">,</span> <span class="mf">110.0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">temperature_derating_stress</span><span class="p">(</span><span class="n">materials</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">)</span>
-<span class="go">array([18000000., 34000000., 70000000., 95000000.])</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="refpy.limit_states_dnv.yield_stress">
-<span class="sig-prename descclassname"><span class="pre">refpy.limit_states_dnv.</span></span><span class="sig-name descname"><span class="pre">yield_stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">material</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material_strength_factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/refpy/limit_states_dnv.html#yield_stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.limit_states_dnv.yield_stress" title="Link to this definition">#</a></dt>
-<dd><p>Calculate the yield stress of a material.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>material</strong> (<em>numpy.ndarray</em>) – The types of materials: 1 for ‘CMn’ or ‘13CR’ &amp; 2 for ‘22Cr’ or ‘25CR’.</p></li>
-<li><p><strong>smys</strong> (<em>numpy.ndarray</em>) – The specified minimum yield strengths of the materials.</p></li>
-<li><p><strong>temperature</strong> (<em>numpy.ndarray</em>) – The temperatures at which to calculate the yield stress.</p></li>
-<li><p><strong>material_strength_factor</strong> (<em>np.ndarray</em>) – The material strength factor.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The yield stress values of the materials at the given temperatures
-and strength factor.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>numpy.ndarray</p>
-</dd>
-</dl>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt><a class="reference internal" href="#refpy.limit_states_dnv.temperature_derating_stress" title="refpy.limit_states_dnv.temperature_derating_stress"><code class="xref py py-obj docutils literal notranslate"><span class="pre">temperature_derating_stress</span></code></a></dt><dd><p>Calculate the temperature derating stress of a material.</p>
-</dd>
-</dl>
-</div>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">materials</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">smys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">450.0E+06</span><span class="p">,</span> <span class="mf">450.0E+06</span><span class="p">,</span> <span class="mf">550.0E+06</span><span class="p">,</span> <span class="mf">550.0E+06</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">temperatures</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">80.0</span><span class="p">,</span> <span class="mf">110.0</span><span class="p">,</span> <span class="mf">80.0</span><span class="p">,</span> <span class="mf">110.0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">material_strength_factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">yield_stress</span><span class="p">(</span><span class="n">materials</span><span class="p">,</span> <span class="n">smys</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">,</span> <span class="n">material_strength_factor</span><span class="p">)</span>
-<span class="go">array([4.1472e+08, 3.9936e+08, 4.6080e+08, 4.3680e+08])</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="refpy.limit_states_dnv.tensile_strength">
-<span class="sig-prename descclassname"><span class="pre">refpy.limit_states_dnv.</span></span><span class="sig-name descname"><span class="pre">tensile_strength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">material</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material_strength_factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/refpy/limit_states_dnv.html#tensile_strength"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.limit_states_dnv.tensile_strength" title="Link to this definition">#</a></dt>
-<dd><p>Calculate the tensile strength of a material.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>material</strong> (<em>numpy.ndarray</em>) – The types of materials: 1 for ‘CMn’ or ‘13CR’ &amp; 2 for ‘22Cr’ or ‘25CR’.</p></li>
-<li><p><strong>smts</strong> (<em>numpy.ndarray</em>) – The specified minimum tensile strengths of the materials.</p></li>
-<li><p><strong>temperature</strong> (<em>numpy.ndarray</em>) – The temperatures at which to calculate the tensile strength.</p></li>
-<li><p><strong>material_strength_factor</strong> (<em>numpy.ndarray</em>) – The material strength factor.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The tensile strength values of the materials at the given temperatures
-and strength factor.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>numpy.ndarray</p>
-</dd>
-</dl>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt><a class="reference internal" href="#refpy.limit_states_dnv.temperature_derating_stress" title="refpy.limit_states_dnv.temperature_derating_stress"><code class="xref py py-obj docutils literal notranslate"><span class="pre">temperature_derating_stress</span></code></a></dt><dd><p>Calculate the temperature derating stress of a material.</p>
-</dd>
-</dl>
-</div>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">materials</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">smts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">485.0E+06</span><span class="p">,</span> <span class="mf">485.0E+06</span><span class="p">,</span> <span class="mf">590.0E+06</span><span class="p">,</span> <span class="mf">590.0E+06</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">temperatures</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">80.0</span><span class="p">,</span> <span class="mf">110.0</span><span class="p">,</span> <span class="mf">80.0</span><span class="p">,</span> <span class="mf">110.0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">material_strength_factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tensile_strength</span><span class="p">(</span><span class="n">materials</span><span class="p">,</span> <span class="n">smts</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">,</span> <span class="n">material_strength_factor</span><span class="p">)</span>
-<span class="go">array([4.4832e+08, 4.3296e+08, 4.9920e+08, 4.7520e+08])</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="refpy.limit_states_dnv.characteristic_material_burst_strength">
-<span class="sig-prename descclassname"><span class="pre">refpy.limit_states_dnv.</span></span><span class="sig-name descname"><span class="pre">characteristic_material_burst_strength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">material</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material_strength_factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/refpy/limit_states_dnv.html#characteristic_material_burst_strength"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.limit_states_dnv.characteristic_material_burst_strength" title="Link to this definition">#</a></dt>
-<dd><p>Calculate the characteristic material burst strength.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>material</strong> (<em>numpy.ndarray</em>) – The types of materials: 1 for ‘CMn’ or ‘13CR’ &amp; 2 for ‘22Cr’ or ‘25CR’.</p></li>
-<li><p><strong>smys</strong> (<em>numpy.ndarray</em>) – The specified minimum yield strengths of the materials.</p></li>
-<li><p><strong>smts</strong> (<em>numpy.ndarray</em>) – The specified minimum tensile strengths of the materials.</p></li>
-<li><p><strong>temperature</strong> (<em>numpy.ndarray</em>) – The temperatures at which to calculate the burst strength.</p></li>
-<li><p><strong>material_strength_factor</strong> (<em>numpy.ndarray</em>) – The material strength factor.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The characteristic material burst strength values of the materials
-at the given temperatures and strength factor.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>numpy.ndarray</p>
-</dd>
-</dl>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt><a class="reference internal" href="#refpy.limit_states_dnv.yield_stress" title="refpy.limit_states_dnv.yield_stress"><code class="xref py py-obj docutils literal notranslate"><span class="pre">yield_stress</span></code></a></dt><dd><p>Calculate the yield stress of a material.</p>
-</dd>
-<dt><a class="reference internal" href="#refpy.limit_states_dnv.tensile_strength" title="refpy.limit_states_dnv.tensile_strength"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensile_strength</span></code></a></dt><dd><p>Calculate the tensile strength of a material.</p>
-</dd>
-</dl>
-</div>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">materials</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">smys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">450.0E+06</span><span class="p">,</span> <span class="mf">450.0E+06</span><span class="p">,</span> <span class="mf">550.0E+06</span><span class="p">,</span> <span class="mf">550.0E+06</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">smts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">600.0E+06</span><span class="p">,</span> <span class="mf">600.0E+06</span><span class="p">,</span> <span class="mf">700.0E+06</span><span class="p">,</span> <span class="mf">700.0E+06</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">temperatures</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">80.0</span><span class="p">,</span> <span class="mf">110.0</span><span class="p">,</span> <span class="mf">80.0</span><span class="p">,</span> <span class="mf">110.0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">material_strength_factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">characteristic_material_burst_strength</span><span class="p">(</span><span class="n">materials</span><span class="p">,</span> <span class="n">smys</span><span class="p">,</span> <span class="n">smts</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">,</span> <span class="n">material_strength_factor</span><span class="p">)</span>
-<span class="go">array([4.1472e+08, 3.9936e+08, 4.6080e+08, 4.3680e+08])</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="refpy.limit_states_dnv.burst_pressure">
-<span class="sig-prename descclassname"><span class="pre">refpy.limit_states_dnv.</span></span><span class="sig-name descname"><span class="pre">burst_pressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outer_diameter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wall_thickness</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corrosion_allowance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material_strength_factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/refpy/limit_states_dnv.html#burst_pressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.limit_states_dnv.burst_pressure" title="Link to this definition">#</a></dt>
-<dd><p>Calculate the burst pressure of a pipeline.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>outer_diameter</strong> (<em>float</em>) – The outer diameter of the pipeline.</p></li>
-<li><p><strong>wall_thickness</strong> (<em>float</em>) – The wall thickness of the pipeline.</p></li>
-<li><p><strong>corrosion_allowance</strong> (<em>float</em>) – The corrosion allowance to be subtracted from the wall thickness.</p></li>
-<li><p><strong>material</strong> (<em>numpy.ndarray</em>) – The types of materials: 1 for ‘CMn’ or ‘13CR’ &amp; 2 for ‘22Cr’ or ‘25CR’.</p></li>
-<li><p><strong>smys</strong> (<em>numpy.ndarray</em>) – The specified minimum yield strengths of the materials.</p></li>
-<li><p><strong>smts</strong> (<em>numpy.ndarray</em>) – The specified minimum tensile strengths of the materials.</p></li>
-<li><p><strong>temperature</strong> (<em>numpy.ndarray</em>) – The temperatures at which to calculate the burst pressure.</p></li>
-<li><p><strong>material_strength_factor</strong> (<em>float</em>) – The material strength factor.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The burst pressure values of the pipeline.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>numpy.ndarray</p>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If a material is not supported.</p>
-</dd>
-</dl>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>characteristic_material_burst_strength : Calculate the characteristic material burst strength.
-wall_thickness_corroded : Calculate the corroded wall thickness.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">outer_diameter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.2731</span><span class="p">,</span> <span class="mf">0.3239</span><span class="p">,</span> <span class="mf">0.2731</span><span class="p">,</span> <span class="mf">0.3239</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">wall_thickness</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0127</span><span class="p">,</span> <span class="mf">0.0159</span><span class="p">,</span> <span class="mf">0.0127</span><span class="p">,</span> <span class="mf">0.0159</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">corrosion_allowance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.003</span><span class="p">,</span> <span class="mf">0.003</span><span class="p">,</span> <span class="mf">0.003</span><span class="p">,</span> <span class="mf">0.003</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">materials</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">smys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">450.0E+06</span><span class="p">,</span> <span class="mf">450.0E+06</span><span class="p">,</span> <span class="mf">550.0E+06</span><span class="p">,</span> <span class="mf">550.0E+06</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">smts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">600.0E+06</span><span class="p">,</span> <span class="mf">600.0E+06</span><span class="p">,</span> <span class="mf">700.0E+06</span><span class="p">,</span> <span class="mf">700.0E+06</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">temperatures</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">80.0</span><span class="p">,</span> <span class="mf">110.0</span><span class="p">,</span> <span class="mf">80.0</span><span class="p">,</span> <span class="mf">110.0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">material_strength_factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">burst_pressure</span><span class="p">(</span><span class="n">outer_diameter</span><span class="p">,</span> <span class="n">wall_thickness</span><span class="p">,</span> <span class="n">corrosion_allowance</span><span class="p">,</span> <span class="n">materials</span><span class="p">,</span> <span class="n">smys</span><span class="p">,</span> <span class="n">smts</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">,</span> <span class="n">material_strength_factor</span><span class="p">)</span>
-<span class="go">array([35270393.70222808, 38255444.18258572, 39189326.33580898,</span>
-<span class="go">       41841892.07470313])</span>
-</pre></div>
-</div>
-</div>
-</dd></dl>
-
+  <section id="dnv-limit-states">
+<h1>DNV Limit States<a class="headerlink" href="#dnv-limit-states" title="Link to this heading">#</a></h1>
 </section>
 
 
@@ -581,7 +367,7 @@ wall_thickness_corroded : Calculate the corroded wall thickness.</p>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -609,33 +395,18 @@ wall_thickness_corroded : Calculate the corroded wall thickness.</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
-<div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.limit_states_dnv.temperature_derating_stress"><code class="docutils literal notranslate"><span class="pre">temperature_derating_stress()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.limit_states_dnv.yield_stress"><code class="docutils literal notranslate"><span class="pre">yield_stress()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.limit_states_dnv.tensile_strength"><code class="docutils literal notranslate"><span class="pre">tensile_strength()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.limit_states_dnv.characteristic_material_burst_strength"><code class="docutils literal notranslate"><span class="pre">characteristic_material_burst_strength()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.limit_states_dnv.burst_pressure"><code class="docutils literal notranslate"><span class="pre">burst_pressure()</span></code></a></li>
-</ul>
-  </nav></div>
-
-  <div class="sidebar-secondary-item">
-
-  <div class="tocsection sourcelink">
-    <a href="_sources/limit_states_dnv.rst.txt">
-      <i class="fa-solid fa-file-lines"></i> Show Source
-    </a>
-  </div>
-</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/limit_states_dnv.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
 
 </div></div>
               
@@ -650,8 +421,8 @@ wall_thickness_corroded : Calculate the corroded wall thickness.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -676,7 +447,8 @@ wall_thickness_corroded : Calculate the corroded wall thickness.</p>
       
         <div class="footer-item">
 <p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
 </p></div>
       
     </div>
