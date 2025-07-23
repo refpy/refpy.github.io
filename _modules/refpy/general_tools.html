@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>refpy.pipe_properties &#8212; RefPy v0.1.9 documentation</title>
+    <title>refpy.general_tools &#8212; RefPy v0.1.12 documentation</title>
   
   
   
@@ -38,10 +38,10 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=bb01e3b6"></script>
+    <script src="../../_static/documentation_options.js?v=4828786f"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/refpy/pipe_properties';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/refpy/general_tools';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -112,8 +112,8 @@
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="RefPy v0.1.9 documentation - Home"/>
-    <img src="../../_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="RefPy v0.1.9 documentation - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="RefPy v0.1.12 documentation - Home"/>
+    <img src="../../_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="RefPy v0.1.12 documentation - Home"/>
   
   
 </a></div>
@@ -336,7 +336,7 @@
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">refpy.pipe_properties</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">refpy.general_tools</span></li>
   </ul>
 </nav>
 </div>
@@ -353,14 +353,14 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <h1>Source code for refpy.pipe_properties</h1><div class="highlight"><pre>
+  <h1>Source code for refpy.general_tools</h1><div class="highlight"><pre>
 <span></span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Library of pipeline main properties</span>
 <span class="sd">&#39;&#39;&#39;</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <div class="viewcode-block" id="Pipe">
-<a class="viewcode-back" href="../../pipe_properties.html#refpy.pipe_properties.Pipe">[docs]</a>
+<a class="viewcode-back" href="../../general_tools.html#refpy.general_tools.Pipe">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Pipe</span><span class="p">:</span> <span class="c1"># pylint: disable=too-many-arguments</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Class representing a pipeline section with geometric and material properties.</span>
@@ -398,7 +398,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">youngs_modulus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">youngs_modulus</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Pipe.wall_thickness_corroded">
-<a class="viewcode-back" href="../../pipe_properties.html#refpy.pipe_properties.Pipe.wall_thickness_corroded">[docs]</a>
+<a class="viewcode-back" href="../../general_tools.html#refpy.general_tools.Pipe.wall_thickness_corroded">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">wall_thickness_corroded</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the corroded wall thickness.</span>
@@ -425,7 +425,7 @@
 
 
 <div class="viewcode-block" id="Pipe.inner_diameter">
-<a class="viewcode-back" href="../../pipe_properties.html#refpy.pipe_properties.Pipe.inner_diameter">[docs]</a>
+<a class="viewcode-back" href="../../general_tools.html#refpy.general_tools.Pipe.inner_diameter">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">inner_diameter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the pipe inner diameter.</span>
@@ -452,7 +452,7 @@
 
 
 <div class="viewcode-block" id="Pipe.inner_area">
-<a class="viewcode-back" href="../../pipe_properties.html#refpy.pipe_properties.Pipe.inner_area">[docs]</a>
+<a class="viewcode-back" href="../../general_tools.html#refpy.general_tools.Pipe.inner_area">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">inner_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the pipe inner area.</span>
@@ -478,7 +478,7 @@
 
 
 <div class="viewcode-block" id="Pipe.outer_area">
-<a class="viewcode-back" href="../../pipe_properties.html#refpy.pipe_properties.Pipe.outer_area">[docs]</a>
+<a class="viewcode-back" href="../../general_tools.html#refpy.general_tools.Pipe.outer_area">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">outer_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the pipe outer area.</span>
@@ -503,7 +503,7 @@
 
 
 <div class="viewcode-block" id="Pipe.steel_area">
-<a class="viewcode-back" href="../../pipe_properties.html#refpy.pipe_properties.Pipe.steel_area">[docs]</a>
+<a class="viewcode-back" href="../../general_tools.html#refpy.general_tools.Pipe.steel_area">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">steel_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the steel cross-sectional area.</span>
@@ -530,7 +530,7 @@
 
 
 <div class="viewcode-block" id="Pipe.total_outer_diameter">
-<a class="viewcode-back" href="../../pipe_properties.html#refpy.pipe_properties.Pipe.total_outer_diameter">[docs]</a>
+<a class="viewcode-back" href="../../general_tools.html#refpy.general_tools.Pipe.total_outer_diameter">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">total_outer_diameter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the total outer diameter of steel and coating.</span>
@@ -557,7 +557,7 @@
 
 
 <div class="viewcode-block" id="Pipe.total_outer_area">
-<a class="viewcode-back" href="../../pipe_properties.html#refpy.pipe_properties.Pipe.total_outer_area">[docs]</a>
+<a class="viewcode-back" href="../../general_tools.html#refpy.general_tools.Pipe.total_outer_area">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">total_outer_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the outer area of steel and coating.</span>
@@ -583,7 +583,7 @@
 
 
 <div class="viewcode-block" id="Pipe.coating_area">
-<a class="viewcode-back" href="../../pipe_properties.html#refpy.pipe_properties.Pipe.coating_area">[docs]</a>
+<a class="viewcode-back" href="../../general_tools.html#refpy.general_tools.Pipe.coating_area">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">coating_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the coating cross-sectional area.</span>
@@ -610,7 +610,7 @@
 
 
 <div class="viewcode-block" id="Pipe.axial_stiffness">
-<a class="viewcode-back" href="../../pipe_properties.html#refpy.pipe_properties.Pipe.axial_stiffness">[docs]</a>
+<a class="viewcode-back" href="../../general_tools.html#refpy.general_tools.Pipe.axial_stiffness">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">axial_stiffness</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the axial stiffness.</span>
@@ -638,7 +638,7 @@
 
 
 <div class="viewcode-block" id="Pipe.area_moment_inertia">
-<a class="viewcode-back" href="../../pipe_properties.html#refpy.pipe_properties.Pipe.area_moment_inertia">[docs]</a>
+<a class="viewcode-back" href="../../general_tools.html#refpy.general_tools.Pipe.area_moment_inertia">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">area_moment_inertia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the area moment inertia.</span>
@@ -665,7 +665,7 @@
 
 
 <div class="viewcode-block" id="Pipe.bending_stiffness">
-<a class="viewcode-back" href="../../pipe_properties.html#refpy.pipe_properties.Pipe.bending_stiffness">[docs]</a>
+<a class="viewcode-back" href="../../general_tools.html#refpy.general_tools.Pipe.bending_stiffness">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">bending_stiffness</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the bending stiffness.</span>

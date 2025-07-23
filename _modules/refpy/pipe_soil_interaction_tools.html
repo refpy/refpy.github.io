@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>refpy.pipe_soil_interaction &#8212; RefPy v0.1.9 documentation</title>
+    <title>refpy.pipe_soil_interaction_tools &#8212; RefPy v0.1.12 documentation</title>
   
   
   
@@ -38,10 +38,10 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=bb01e3b6"></script>
+    <script src="../../_static/documentation_options.js?v=4828786f"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/refpy/pipe_soil_interaction';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/refpy/pipe_soil_interaction_tools';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -112,8 +112,8 @@
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="RefPy v0.1.9 documentation - Home"/>
-    <img src="../../_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="RefPy v0.1.9 documentation - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="RefPy v0.1.12 documentation - Home"/>
+    <img src="../../_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="RefPy v0.1.12 documentation - Home"/>
   
   
 </a></div>
@@ -336,7 +336,7 @@
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">refpy.pipe_soil_interaction</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">refpy.pipe_soil_interaction_tools</span></li>
   </ul>
 </nav>
 </div>
@@ -353,19 +353,45 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <h1>Source code for refpy.pipe_soil_interaction</h1><div class="highlight"><pre>
+  <h1>Source code for refpy.pipe_soil_interaction_tools</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Module for calculating the capacity of soils using various models.</span>
+<span class="sd">This module provides classes and functions for calculating the capacity of soils using various</span>
+<span class="sd">models for a given pipe and soil configuration.</span>
+
+<span class="sd">Features:</span>
+<span class="sd"> - The `PSI` class implements soil capacity calculations for different pipe and soil properties,</span>
+<span class="sd">   supporting vectorized and model-based approaches.</span>
+<span class="sd"> - Designed for use in subsea pipeline and riser engineering, but general enough for any</span>
+<span class="sd">   pipe-soil interaction analysis.</span>
+<span class="sd"> - All calculations are vectorized using NumPy for efficiency and flexibility.</span>
+
+<span class="sd">.. raw:: html</span>
+
+<span class="sd">   &lt;hr style=&quot;height:6px; background-color:#888; border:none; margin:1.5em 0;&quot; /&gt;</span>
+
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<div class="viewcode-block" id="PipeSoilInteraction">
-<a class="viewcode-back" href="../../pipe_soil_interaction.html#refpy.pipe_soil_interaction.PipeSoilInteraction">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">PipeSoilInteraction</span><span class="p">:</span> <span class="c1"># pylint: disable=too-many-arguments</span>
+<div class="viewcode-block" id="PSI">
+<a class="viewcode-back" href="../../pipe_soil_interaction_tools.html#refpy.pipe_soil_interaction_tools.PSI">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PSI</span><span class="p">:</span> <span class="c1"># pylint: disable=too-many-arguments</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Class for calculating the capacity of soils using various models</span>
 <span class="sd">    for a given pipe and soil configuration.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    diameter : float, optional</span>
+<span class="sd">        Diameter of the pipe.</span>
+<span class="sd">    surface_roughness : str, optional</span>
+<span class="sd">        Surface roughness of the pipe (&#39;Smooth&#39; or &#39;Rough&#39;).</span>
+<span class="sd">    density : float, optional</span>
+<span class="sd">        Density of the soil.</span>
+<span class="sd">    surcharge_on_seabed : float, optional</span>
+<span class="sd">        Stress or surcharge at the elevation of the seabed.</span>
+<span class="sd">    burial_depth : float, optional</span>
+<span class="sd">        Depth of burial.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
@@ -378,19 +404,6 @@
         <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Initialize a PipeSoilInteraction object with pipe and soil properties.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        diameter : float</span>
-<span class="sd">            Diameter of the pipe.</span>
-<span class="sd">        surface_roughness : str</span>
-<span class="sd">            Surface roughness of the pipe (&#39;Smooth&#39; or &#39;Rough&#39;).</span>
-<span class="sd">        density : float</span>
-<span class="sd">            Density of the soil.</span>
-<span class="sd">        surcharge_on_seabed : float</span>
-<span class="sd">            Stress or surcharge at the elevation of the seabed.</span>
-<span class="sd">        burial_depth : float</span>
-<span class="sd">            Depth of burial.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">total_outer_diameter</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">total_outer_diameter</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">surface_roughness</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">surface_roughness</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">object</span><span class="p">)</span>
@@ -398,9 +411,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">surcharge_on_seabed</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">surcharge_on_seabed</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">burial_depth</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">burial_depth</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
 
-<div class="viewcode-block" id="PipeSoilInteraction.downward_undrained_model1">
-<a class="viewcode-back" href="../../pipe_soil_interaction.html#refpy.pipe_soil_interaction.PipeSoilInteraction.downward_undrained_model1">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">downward_undrained_model1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="PSI.downward_undrained_model1">
+<a class="viewcode-back" href="../../pipe_soil_interaction_tools.html#refpy.pipe_soil_interaction_tools.PSI.downward_undrained_model1">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">downward_undrained_model1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># pylint: disable=too-many-locals</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the vertical bearing capacity of soil using the downward undrained model.</span>
 
@@ -412,7 +425,7 @@
 <span class="sd">            Array of vertical bearing capacity arrays for each total_outer_diameter value.</span>
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; psi = PipeSoilInteraction(</span>
+<span class="sd">        &gt;&gt;&gt; psi = PSI(</span>
 <span class="sd">        ...     total_outer_diameter=[0.2731],</span>
 <span class="sd">        ...     surface_roughness=[&#39;Smooth&#39;],</span>
 <span class="sd">        ...     density=[1000.0],</span>
@@ -420,7 +433,8 @@
 <span class="sd">        ...     burial_depth=[1.0]</span>
 <span class="sd">        ... )</span>
 <span class="sd">        &gt;&gt;&gt; psi.downward_undrained_model1()</span>
-<span class="sd">        (array([[0.   , 0.005, ... 0.995, 1.   ]]), array([[   0.        ,  920.50185636, ... 7141.92857341, 7163.61163085]]))</span>
+<span class="sd">        (array([[0.   , 0.005, ... 0.995, 1.   ]]),</span>
+<span class="sd">         array([[   0.        ,  920.50185636, ... 7141.92857341, 7163.61163085]]))</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">depth_arrays</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">vertical_bearing_capacity_arrays</span> <span class="o">=</span> <span class="p">[]</span>
@@ -454,11 +468,15 @@
             <span class="n">friction_factor_reference</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">surface_roughness</span> <span class="o">==</span> <span class="s1">&#39;Smooth&#39;</span><span class="p">:</span>
-                <span class="n">friction_factor_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.00</span><span class="p">,</span> <span class="mf">1.12</span><span class="p">,</span> <span class="mf">1.19</span><span class="p">,</span> <span class="mf">1.24</span><span class="p">,</span> <span class="mf">1.28</span><span class="p">,</span> <span class="mf">1.31</span><span class="p">,</span> <span class="mf">1.34</span><span class="p">,</span> <span class="mf">1.36</span><span class="p">,</span> <span class="mf">1.38</span><span class="p">,</span>
-                                                   <span class="mf">1.39</span><span class="p">,</span> <span class="mf">1.40</span><span class="p">,</span> <span class="mf">1.41</span><span class="p">,</span> <span class="mf">1.42</span><span class="p">,</span> <span class="mf">1.43</span><span class="p">,</span> <span class="mf">1.44</span><span class="p">,</span> <span class="mf">1.445</span><span class="p">,</span> <span class="mf">1.45</span><span class="p">])</span>
+                <span class="n">friction_factor_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                    <span class="p">[</span><span class="mf">1.00</span><span class="p">,</span> <span class="mf">1.12</span><span class="p">,</span> <span class="mf">1.19</span><span class="p">,</span> <span class="mf">1.24</span><span class="p">,</span> <span class="mf">1.28</span><span class="p">,</span> <span class="mf">1.31</span><span class="p">,</span> <span class="mf">1.34</span><span class="p">,</span> <span class="mf">1.36</span><span class="p">,</span> <span class="mf">1.38</span><span class="p">,</span>
+                     <span class="mf">1.39</span><span class="p">,</span> <span class="mf">1.40</span><span class="p">,</span> <span class="mf">1.41</span><span class="p">,</span> <span class="mf">1.42</span><span class="p">,</span> <span class="mf">1.43</span><span class="p">,</span> <span class="mf">1.44</span><span class="p">,</span> <span class="mf">1.445</span><span class="p">,</span> <span class="mf">1.45</span><span class="p">]</span>
+                <span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">friction_factor_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.00</span><span class="p">,</span> <span class="mf">1.23</span><span class="p">,</span> <span class="mf">1.36</span><span class="p">,</span> <span class="mf">1.44</span><span class="p">,</span> <span class="mf">1.50</span><span class="p">,</span> <span class="mf">1.55</span><span class="p">,</span> <span class="mf">1.59</span><span class="p">,</span> <span class="mf">1.61</span><span class="p">,</span> <span class="mf">1.64</span><span class="p">,</span>
-                                                   <span class="mf">1.66</span><span class="p">,</span> <span class="mf">1.67</span><span class="p">,</span> <span class="mf">1.69</span><span class="p">,</span> <span class="mf">1.70</span><span class="p">,</span> <span class="mf">1.71</span><span class="p">,</span> <span class="mf">1.72</span><span class="p">,</span> <span class="mf">1.730</span><span class="p">,</span> <span class="mf">1.74</span><span class="p">])</span>
+                <span class="n">friction_factor_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                    <span class="p">[</span><span class="mf">1.00</span><span class="p">,</span> <span class="mf">1.23</span><span class="p">,</span> <span class="mf">1.36</span><span class="p">,</span> <span class="mf">1.44</span><span class="p">,</span> <span class="mf">1.50</span><span class="p">,</span> <span class="mf">1.55</span><span class="p">,</span> <span class="mf">1.59</span><span class="p">,</span> <span class="mf">1.61</span><span class="p">,</span> <span class="mf">1.64</span><span class="p">,</span>
+                     <span class="mf">1.66</span><span class="p">,</span> <span class="mf">1.67</span><span class="p">,</span> <span class="mf">1.69</span><span class="p">,</span> <span class="mf">1.70</span><span class="p">,</span> <span class="mf">1.71</span><span class="p">,</span> <span class="mf">1.72</span><span class="p">,</span> <span class="mf">1.730</span><span class="p">,</span> <span class="mf">1.74</span><span class="p">]</span>
+                <span class="p">)</span>
 
             <span class="n">interpolated_friction_factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span>
                 <span class="n">friction_factor</span><span class="p">,</span> <span class="n">friction_factor_reference</span><span class="p">,</span> <span class="n">friction_factor_values</span>
@@ -482,8 +500,10 @@
                 <span class="n">outer_diameter</span> <span class="o">*</span> <span class="p">(</span><span class="n">depth</span> <span class="o">-</span> <span class="n">outer_diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
             <span class="p">)</span>
 
-            <span class="n">vertical_bearing_capacity</span> <span class="o">=</span> <span class="n">vertical_bearing_capacity</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">depth_correction_factor</span><span class="p">)</span> <span class="o">+</span> \
-                <span class="n">density</span> <span class="o">*</span> <span class="mf">9.807</span> <span class="o">*</span> <span class="n">bearing_capacity_modifier</span>
+            <span class="n">vertical_bearing_capacity</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">vertical_bearing_capacity</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">depth_correction_factor</span><span class="p">)</span> 
+                <span class="o">+</span> <span class="n">density</span> <span class="o">*</span> <span class="mf">9.807</span> <span class="o">*</span> <span class="n">bearing_capacity_modifier</span>
+            <span class="p">)</span>
 
             <span class="c1"># Append depth and vertical_bearing_capacity arrays for this outer_diameter</span>
             <span class="n">depth_arrays</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">depth</span><span class="p">))</span>

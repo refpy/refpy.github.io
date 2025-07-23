@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>refpy.lateral_buckling &#8212; RefPy v0.1.9 documentation</title>
+    <title>refpy.lateral_buckling_tools &#8212; RefPy v0.1.12 documentation</title>
   
   
   
@@ -38,10 +38,10 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=bb01e3b6"></script>
+    <script src="../../_static/documentation_options.js?v=4828786f"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/refpy/lateral_buckling';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/refpy/lateral_buckling_tools';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -112,8 +112,8 @@
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="RefPy v0.1.9 documentation - Home"/>
-    <img src="../../_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="RefPy v0.1.9 documentation - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="RefPy v0.1.12 documentation - Home"/>
+    <img src="../../_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="RefPy v0.1.12 documentation - Home"/>
   
   
 </a></div>
@@ -336,7 +336,7 @@
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">refpy.lateral_buckling</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">refpy.lateral_buckling_tools</span></li>
   </ul>
 </nav>
 </div>
@@ -353,20 +353,44 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <h1>Source code for refpy.lateral_buckling</h1><div class="highlight"><pre>
+  <h1>Source code for refpy.lateral_buckling_tools</h1><div class="highlight"><pre>
 <span></span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">Library of lateral buckling calculations</span>
+<span class="sd">This module provides classes and functions for lateral buckling calculations and friction factor</span>
+<span class="sd">distribution fitting for subsea pipelines.</span>
+
+<span class="sd">Features:</span>
+<span class="sd"> - The `LBDistributions` class implements lognormal distribution fitting for geotechnical friction</span>
+<span class="sd">   factors, supporting low, best, and high estimates (LE, BE, HE) and multiple fit types.</span>
+<span class="sd"> - Designed for use in pipeline lateral buckling reliability analysis and geotechnical parameter</span>
+<span class="sd">   estimation.</span>
+<span class="sd"> - All calculations are vectorized using NumPy and leverage SciPy for statistical fitting.</span>
+
+<span class="sd">.. raw:: html</span>
+
+<span class="sd">   &lt;hr style=&quot;height:6px; background-color:#888; border:none; margin:1.5em 0;&quot; /&gt;</span>
+
 <span class="sd">&#39;&#39;&#39;</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">lognorm</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize</span>
 
-<div class="viewcode-block" id="LateralBuckling">
-<a class="viewcode-back" href="../../lateral_buckling.html#refpy.lateral_buckling.LateralBuckling">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">LateralBuckling</span><span class="p">:</span>
+<div class="viewcode-block" id="LBDistributions">
+<a class="viewcode-back" href="../../lateral_buckling_tools.html#refpy.lateral_buckling_tools.LBDistributions">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">LBDistributions</span><span class="p">:</span> <span class="c1"># pylint: disable=too-many-instance-attributes, too-many-arguments</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Class for lateral buckling calculations, including friction factor distribution fitting.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    friction_factor_le : float, optional</span>
+<span class="sd">        Low estimate (LE) friction factor, representing the 5th percentile.</span>
+<span class="sd">    friction_factor_be : float, optional</span>
+<span class="sd">        Best estimate (BE) friction factor, representing the 50th percentile.</span>
+<span class="sd">    friction_factor_he : float, optional</span>
+<span class="sd">        High estimate (HE) friction factor, representing the 95th percentile.</span>
+<span class="sd">    friction_factor_fit_type : str, optional</span>
+<span class="sd">        Type of fit to perform: &#39;LE_BE_HE&#39;, &#39;LE_BE&#39;, or &#39;BE_HE&#39;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
@@ -378,25 +402,14 @@
         <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Initialize with geotechnical friction factor estimates and fit type.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        friction_factor_le : float</span>
-<span class="sd">            Low estimate (LE) friction factor, representing the 5th percentile.</span>
-<span class="sd">        friction_factor_be : float</span>
-<span class="sd">            Best estimate (BE) friction factor, representing the 50th percentile.</span>
-<span class="sd">        friction_factor_he : float</span>
-<span class="sd">            High estimate (HE) friction factor, representing the 95th percentile.</span>
-<span class="sd">        friction_factor_fit_type : str</span>
-<span class="sd">            Type of fit to perform: &#39;LE_BE_HE&#39;, &#39;LE_BE&#39;, or &#39;BE_HE&#39;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_le</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_le</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_be</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_be</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_he</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_he</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_fit_type</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_fit_type</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">object</span><span class="p">)</span>
 
-<div class="viewcode-block" id="LateralBuckling.friction_distribution">
-<a class="viewcode-back" href="../../lateral_buckling.html#refpy.lateral_buckling.LateralBuckling.friction_distribution">[docs]</a>
+<div class="viewcode-block" id="LBDistributions.friction_distribution">
+<a class="viewcode-back" href="../../lateral_buckling_tools.html#refpy.lateral_buckling_tools.LBDistributions.friction_distribution">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">friction_distribution</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the parameters of the lognormal friction factor distribution (axial or lateral)</span>
@@ -428,7 +441,7 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; lb = LateralBuckling(</span>
+<span class="sd">        &gt;&gt;&gt; lb = LBDistributions(</span>
 <span class="sd">        ...     friction_factor_le=[0.5],</span>
 <span class="sd">        ...     friction_factor_be=[1.0],</span>
 <span class="sd">        ...     friction_factor_he=[1.5],</span>
@@ -448,7 +461,13 @@
         <span class="n">rmse_list</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="c1"># Define the objective function</span>
-        <span class="k">def</span><span class="w"> </span><span class="nf">objective</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">friction_factor_le</span><span class="p">,</span> <span class="n">friction_factor_be</span><span class="p">,</span> <span class="n">friction_factor_he</span><span class="p">,</span> <span class="n">friction_factor_fit_type</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">objective</span><span class="p">(</span>
+                <span class="n">params</span><span class="p">,</span>
+                <span class="n">friction_factor_le</span><span class="p">,</span>
+                <span class="n">friction_factor_be</span><span class="p">,</span>
+                <span class="n">friction_factor_he</span><span class="p">,</span>
+                <span class="n">friction_factor_fit_type</span>
+            <span class="p">):</span>
             <span class="n">location_param</span><span class="p">,</span> <span class="n">scale_param</span> <span class="o">=</span> <span class="n">params</span>
             <span class="k">if</span> <span class="n">friction_factor_fit_type</span> <span class="o">==</span> <span class="s1">&#39;LE_BE_HE&#39;</span><span class="p">:</span>
                 <span class="n">le_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
@@ -475,14 +494,28 @@
             <span class="k">return</span> <span class="n">error</span>
 
         <span class="c1"># Loop through the friction factor arrays</span>
-        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">friction_factor_le</span><span class="p">,</span> <span class="n">friction_factor_be</span><span class="p">,</span> <span class="n">friction_factor_he</span><span class="p">,</span> <span class="n">friction_factor_fit_type</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
-            <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_le</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_be</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_he</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_fit_type</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="p">(</span>
+            <span class="n">friction_factor_le</span><span class="p">,</span>
+            <span class="n">friction_factor_be</span><span class="p">,</span>
+            <span class="n">friction_factor_he</span><span class="p">,</span>
+            <span class="n">friction_factor_fit_type</span>
+        <span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+            <span class="nb">zip</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_le</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_be</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_he</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_fit_type</span>
+            <span class="p">)</span>
         <span class="p">):</span>
             <span class="n">initial_location</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span>
-                <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_le</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_be</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_he</span><span class="p">)]</span>
+                <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_le</span><span class="p">),</span>
+                 <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_be</span><span class="p">),</span>
+                 <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_he</span><span class="p">)]</span>
             <span class="p">)</span>
             <span class="n">initial_scale</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span>
-                <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_le</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_be</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_he</span><span class="p">)],</span>
+                <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_le</span><span class="p">),</span>
+                 <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_be</span><span class="p">),</span>
+                 <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_he</span><span class="p">)],</span>
                 <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span>
             <span class="p">)</span>
             <span class="n">initial_guess</span> <span class="o">=</span> <span class="p">[</span><span class="n">initial_location</span><span class="p">,</span> <span class="n">initial_scale</span><span class="p">]</span>
@@ -491,7 +524,12 @@
             <span class="n">result</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span>
                 <span class="n">objective</span><span class="p">,</span>
                 <span class="n">initial_guess</span><span class="p">,</span>
-                <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">friction_factor_le</span><span class="p">,</span> <span class="n">friction_factor_be</span><span class="p">,</span> <span class="n">friction_factor_he</span><span class="p">,</span> <span class="n">friction_factor_fit_type</span><span class="p">),</span>
+                <span class="n">args</span><span class="o">=</span><span class="p">(</span>
+                    <span class="n">friction_factor_le</span><span class="p">,</span>
+                    <span class="n">friction_factor_be</span><span class="p">,</span>
+                    <span class="n">friction_factor_he</span><span class="p">,</span>
+                    <span class="n">friction_factor_fit_type</span>
+                <span class="p">),</span>
                 <span class="n">method</span><span class="o">=</span><span class="s1">&#39;Nelder-Mead&#39;</span>
             <span class="p">)</span>
             <span class="n">location_param</span><span class="p">,</span> <span class="n">scale_param</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span>
@@ -543,7 +581,16 @@
         <span class="n">he_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">he_fit_list</span><span class="p">)</span>
         <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rmse_list</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">mean_friction</span><span class="p">,</span> <span class="n">std_friction</span><span class="p">,</span> <span class="n">location_param</span><span class="p">,</span> <span class="n">scale_param</span><span class="p">,</span> <span class="n">le_fit</span><span class="p">,</span> <span class="n">be_fit</span><span class="p">,</span> <span class="n">he_fit</span><span class="p">,</span> <span class="n">rmse</span></div>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">mean_friction</span><span class="p">,</span>
+            <span class="n">std_friction</span><span class="p">,</span>
+            <span class="n">location_param</span><span class="p">,</span>
+            <span class="n">scale_param</span><span class="p">,</span>
+            <span class="n">le_fit</span><span class="p">,</span>
+            <span class="n">be_fit</span><span class="p">,</span>
+            <span class="n">he_fit</span><span class="p">,</span>
+            <span class="n">rmse</span>
+        <span class="p">)</span></div>
 </div>
 
 </pre></div>

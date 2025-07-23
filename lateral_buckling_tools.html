@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>API Reference &#8212; RefPy v0.1.9 documentation</title>
+    <title>Lateral Buckling Tools &#8212; RefPy v0.1.13 documentation</title>
   
   
   
@@ -31,7 +31,7 @@
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=cf56ce1b" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -39,14 +39,15 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="_static/documentation_options.js?v=bb01e3b6"></script>
+    <script src="_static/documentation_options.js?v=e1680c09"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'refpy';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lateral_buckling_tools';</script>
+    <link rel="canonical" href="https://refpy.github.io/refpy/lateral_buckling_tools.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pipe Properties" href="pipe_properties.html" />
-    <link rel="prev" title="RefPy (Open-Source Code for Pipeline Design)" href="index.html" />
+    <link rel="next" title="Pipe-Soil Interaction Tools" href="pipe_soil_interaction_tools.html" />
+    <link rel="prev" title="DNV Tools" href="dnv_tools.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -115,8 +116,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="RefPy v0.1.9 documentation - Home"/>
-    <img src="_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="RefPy v0.1.9 documentation - Home"/>
+    <img src="_static/logo.svg" class="logo__image only-light" alt="RefPy v0.1.13 documentation - Home"/>
+    <img src="_static/logo_dark.svg" class="logo__image only-dark pst-js-only" alt="RefPy v0.1.13 documentation - Home"/>
   
   
 </a></div>
@@ -131,8 +132,15 @@
 <nav>
   <ul class="bd-navbar-elements navbar-nav">
     
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="#">
+  <a class="nav-link nav-internal" href="api_reference.html">
     API Reference
   </a>
 </li>
@@ -175,7 +183,7 @@
           
           
           
-          <a href="https://github.com/refpy/refpy/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+          <a href="https://refpy.github.io/refpy/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
@@ -226,8 +234,15 @@
 <nav>
   <ul class="bd-navbar-elements navbar-nav">
     
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="#">
+  <a class="nav-link nav-internal" href="api_reference.html">
     API Reference
   </a>
 </li>
@@ -261,7 +276,7 @@
           
           
           
-          <a href="https://github.com/refpy/refpy/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+          <a href="https://refpy.github.io/refpy/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
@@ -271,19 +286,6 @@
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-<nav class="bd-docs-nav bd-links"
-     aria-label="Section Navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="pipe_properties.html">Pipe Properties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dnv_limit_states.html">DNV Limit States</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lateral_buckling.html">Lateral Buckling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pipe_soil_interaction.html">Pipe-Soil Interaction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oos.html">OOS</a></li>
-</ul>
-</div>
-</nav></div>
         <div class="sidebar-primary-item">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
@@ -300,6 +302,20 @@
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="linepipe_tools.html">Linepipe Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dnv_tools.html">DNV Tools</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lateral Buckling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe_soil_interaction_tools.html">Pipe-Soil Interaction Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oos_tools.html">OOS Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abaqus_tools.html">Abaqus Tools</a></li>
+</ul>
+</div>
+</nav></div>
     </div>
   
   
@@ -337,7 +353,10 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">API Reference</span></li>
+    
+    <li class="breadcrumb-item"><a href="api_reference.html" class="nav-link">API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Lateral Buckling Tools</span></li>
   </ul>
 </nav>
 </div>
@@ -354,67 +373,74 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="api-reference">
-<h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="pipe_properties.html">Pipe Properties</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pipe_properties.html#refpy.pipe_properties.Pipe"><code class="docutils literal notranslate"><span class="pre">Pipe</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pipe_properties.html#refpy.pipe_properties.Pipe.wall_thickness_corroded"><code class="docutils literal notranslate"><span class="pre">Pipe.wall_thickness_corroded()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pipe_properties.html#refpy.pipe_properties.Pipe.inner_diameter"><code class="docutils literal notranslate"><span class="pre">Pipe.inner_diameter()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pipe_properties.html#refpy.pipe_properties.Pipe.inner_area"><code class="docutils literal notranslate"><span class="pre">Pipe.inner_area()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pipe_properties.html#refpy.pipe_properties.Pipe.outer_area"><code class="docutils literal notranslate"><span class="pre">Pipe.outer_area()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pipe_properties.html#refpy.pipe_properties.Pipe.steel_area"><code class="docutils literal notranslate"><span class="pre">Pipe.steel_area()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pipe_properties.html#refpy.pipe_properties.Pipe.total_outer_diameter"><code class="docutils literal notranslate"><span class="pre">Pipe.total_outer_diameter()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pipe_properties.html#refpy.pipe_properties.Pipe.total_outer_area"><code class="docutils literal notranslate"><span class="pre">Pipe.total_outer_area()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pipe_properties.html#refpy.pipe_properties.Pipe.coating_area"><code class="docutils literal notranslate"><span class="pre">Pipe.coating_area()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pipe_properties.html#refpy.pipe_properties.Pipe.axial_stiffness"><code class="docutils literal notranslate"><span class="pre">Pipe.axial_stiffness()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pipe_properties.html#refpy.pipe_properties.Pipe.area_moment_inertia"><code class="docutils literal notranslate"><span class="pre">Pipe.area_moment_inertia()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pipe_properties.html#refpy.pipe_properties.Pipe.bending_stiffness"><code class="docutils literal notranslate"><span class="pre">Pipe.bending_stiffness()</span></code></a></li>
+  <section id="module-refpy.lateral_buckling_tools">
+<span id="lateral-buckling-tools"></span><h1>Lateral Buckling Tools<a class="headerlink" href="#module-refpy.lateral_buckling_tools" title="Link to this heading">#</a></h1>
+<p>This module provides classes and functions for lateral buckling calculations and friction factor
+distribution fitting for subsea pipelines.</p>
+<dl class="simple">
+<dt>Features:</dt><dd><ul class="simple">
+<li><p>The <cite>LBDistributions</cite> class implements lognormal distribution fitting for geotechnical friction
+factors, supporting low, best, and high estimates (LE, BE, HE) and multiple fit types.</p></li>
+<li><p>Designed for use in pipeline lateral buckling reliability analysis and geotechnical parameter
+estimation.</p></li>
+<li><p>All calculations are vectorized using NumPy and leverage SciPy for statistical fitting.</p></li>
 </ul>
-</li>
+</dd>
+</dl>
+<hr style="height:6px; background-color:#888; border:none; margin:1.5em 0;" /><dl class="py class">
+<dt class="sig sig-object py" id="refpy.lateral_buckling_tools.LBDistributions">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">refpy.lateral_buckling_tools.</span></span><span class="sig-name descname"><span class="pre">LBDistributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction_factor_le</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction_factor_be</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction_factor_he</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction_factor_fit_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/refpy/lateral_buckling_tools.html#LBDistributions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.lateral_buckling_tools.LBDistributions" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for lateral buckling calculations, including friction factor distribution fitting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>friction_factor_le</strong> (<em>float</em><em>, </em><em>optional</em>) – Low estimate (LE) friction factor, representing the 5th percentile.</p></li>
+<li><p><strong>friction_factor_be</strong> (<em>float</em><em>, </em><em>optional</em>) – Best estimate (BE) friction factor, representing the 50th percentile.</p></li>
+<li><p><strong>friction_factor_he</strong> (<em>float</em><em>, </em><em>optional</em>) – High estimate (HE) friction factor, representing the 95th percentile.</p></li>
+<li><p><strong>friction_factor_fit_type</strong> (<em>str</em><em>, </em><em>optional</em>) – Type of fit to perform: ‘LE_BE_HE’, ‘LE_BE’, or ‘BE_HE’.</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="dnv_limit_states.html">DNV Limit States</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dnv_limit_states.html#refpy.dnv_limit_states.DNVLimitStates"><code class="docutils literal notranslate"><span class="pre">DNVLimitStates</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dnv_limit_states.html#refpy.dnv_limit_states.DNVLimitStates.temperature_derating_stress"><code class="docutils literal notranslate"><span class="pre">DNVLimitStates.temperature_derating_stress()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="dnv_limit_states.html#refpy.dnv_limit_states.DNVLimitStates.yield_stress"><code class="docutils literal notranslate"><span class="pre">DNVLimitStates.yield_stress()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="dnv_limit_states.html#refpy.dnv_limit_states.DNVLimitStates.tensile_strength"><code class="docutils literal notranslate"><span class="pre">DNVLimitStates.tensile_strength()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="dnv_limit_states.html#refpy.dnv_limit_states.DNVLimitStates.characteristic_material_burst_strength"><code class="docutils literal notranslate"><span class="pre">DNVLimitStates.characteristic_material_burst_strength()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="dnv_limit_states.html#refpy.dnv_limit_states.DNVLimitStates.burst_pressure"><code class="docutils literal notranslate"><span class="pre">DNVLimitStates.burst_pressure()</span></code></a></li>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="refpy.lateral_buckling_tools.LBDistributions.friction_distribution">
+<span class="sig-name descname"><span class="pre">friction_distribution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/refpy/lateral_buckling_tools.html#LBDistributions.friction_distribution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.lateral_buckling_tools.LBDistributions.friction_distribution" title="Link to this definition">#</a></dt>
+<dd><p>Compute the parameters of the lognormal friction factor distribution (axial or lateral)
+by minimizing the root mean square error (RMSE) between geotechnical estimates and
+back-calculated friction factors from the lognormal distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>mean_friction</strong> (<em>np.ndarray</em>) – Array of mean values of the lognormal friction factor distribution.</p></li>
+<li><p><strong>std_friction</strong> (<em>np.ndarray</em>) – Array of standard deviation values of the lognormal friction factor distribution.</p></li>
+<li><p><strong>location_param</strong> (<em>np.ndarray</em>) – Array of location parameters of the lognormal friction factor distribution.</p></li>
+<li><p><strong>scale_param</strong> (<em>np.ndarray</em>) – Array of scale parameters of the lognormal friction factor distribution.</p></li>
+<li><p><strong>le_fit</strong> (<em>np.ndarray</em>) – Array of fitted LE values.</p></li>
+<li><p><strong>be_fit</strong> (<em>np.ndarray</em>) – Array of fitted BE values.</p></li>
+<li><p><strong>he_fit</strong> (<em>np.ndarray</em>) – Array of fitted HE values.</p></li>
+<li><p><strong>rmse</strong> (<em>np.ndarray</em>) – Array of RMSE values for the best fit type.</p></li>
 </ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lateral_buckling.html">Lateral Buckling</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lateral_buckling.html#refpy.lateral_buckling.LateralBuckling"><code class="docutils literal notranslate"><span class="pre">LateralBuckling</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="lateral_buckling.html#refpy.lateral_buckling.LateralBuckling.friction_distribution"><code class="docutils literal notranslate"><span class="pre">LateralBuckling.friction_distribution()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pipe_soil_interaction.html">Pipe-Soil Interaction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pipe_soil_interaction.html#refpy.pipe_soil_interaction.PipeSoilInteraction"><code class="docutils literal notranslate"><span class="pre">PipeSoilInteraction</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pipe_soil_interaction.html#refpy.pipe_soil_interaction.PipeSoilInteraction.downward_undrained_model1"><code class="docutils literal notranslate"><span class="pre">PipeSoilInteraction.downward_undrained_model1()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="oos.html">OOS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="oos.html#refpy.oos.OOSAnonymisation"><code class="docutils literal notranslate"><span class="pre">OOSAnonymisation</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="oos.html#refpy.oos.OOSAnonymisation.process"><code class="docutils literal notranslate"><span class="pre">OOSAnonymisation.process()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="oos.html#refpy.oos.OOSSmoother"><code class="docutils literal notranslate"><span class="pre">OOSSmoother</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="oos.html#refpy.oos.OOSSmoother.fft_filter"><code class="docutils literal notranslate"><span class="pre">OOSSmoother.fft_filter()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="oos.html#refpy.oos.OOSSmoother.fft_welch"><code class="docutils literal notranslate"><span class="pre">OOSSmoother.fft_welch()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="oos.html#refpy.oos.OOSSmoother.gaussian_filter"><code class="docutils literal notranslate"><span class="pre">OOSSmoother.gaussian_filter()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The function calculates the parameters of the lognormal friction factor distribution
+based on LE at 5th percentile, BE at 50th percentile, and HE at 95th percentile</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lb</span> <span class="o">=</span> <span class="n">LBDistributions</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">friction_factor_le</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">friction_factor_be</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">friction_factor_he</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">friction_factor_fit_type</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;LE_BE_HE&#39;</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lb</span><span class="o">.</span><span class="n">friction_distribution</span><span class="p">()</span>
+<span class="go">(array([0.9684083]), array([0.30043236]), array([-0.07804666]), array([0.3031342]), array([0.56177265]), array([0.92492127]), array([1.52282131]), array([0.05765844]))</span>
+</pre></div>
 </div>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
@@ -428,20 +454,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="dnv_tools.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">RefPy (Open-Source Code for Pipeline Design)</p>
+        <p class="prev-next-title">DNV Tools</p>
       </div>
     </a>
     <a class="right-next"
-       href="pipe_properties.html"
+       href="pipe_soil_interaction_tools.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pipe Properties</p>
+        <p class="prev-next-title">Pipe-Soil Interaction Tools</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -457,13 +483,19 @@
 
 
   <div class="sidebar-secondary-item">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/refpy.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div></div>
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.lateral_buckling_tools.LBDistributions"><code class="docutils literal notranslate"><span class="pre">LBDistributions</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.lateral_buckling_tools.LBDistributions.friction_distribution"><code class="docutils literal notranslate"><span class="pre">LBDistributions.friction_distribution()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
 
 </div></div>
               

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>RefPy &#8212; RefPy v0.1.13 documentation</title>
+    <title>Abaqus Tools &#8212; RefPy v0.1.13 documentation</title>
   
   
   
@@ -42,11 +42,11 @@
     <script src="_static/documentation_options.js?v=e1680c09"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
-    <link rel="canonical" href="https://refpy.github.io/refpy/index.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'abaqus_tools';</script>
+    <link rel="canonical" href="https://refpy.github.io/refpy/abaqus_tools.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Getting Started" href="getting_started.html" />
+    <link rel="prev" title="OOS Tools" href="oos_tools.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -104,7 +104,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="index.html">
   
   
   
@@ -138,7 +138,7 @@
 </li>
 
 
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="api_reference.html">
     API Reference
   </a>
@@ -217,8 +217,6 @@
       
       
       
-        
-      
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
@@ -242,7 +240,7 @@
 </li>
 
 
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="api_reference.html">
     API Reference
   </a>
@@ -303,6 +301,20 @@
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="linepipe_tools.html">Linepipe Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dnv_tools.html">DNV Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lateral_buckling_tools.html">Lateral Buckling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe_soil_interaction_tools.html">Pipe-Soil Interaction Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oos_tools.html">OOS Tools</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Abaqus Tools</a></li>
+</ul>
+</div>
+</nav></div>
     </div>
   
   
@@ -325,7 +337,34 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none"></div>
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="api_reference.html" class="nav-link">API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Abaqus Tools</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
               
               
               
@@ -333,75 +372,37 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="refpy">
-<h1>RefPy<a class="headerlink" href="#refpy" title="Link to this heading">#</a></h1>
-<hr style="height:6px; background-color:#888; border:none; margin:1.5em 0;" /><section id="project-philosophy">
-<h2>Project Philosophy<a class="headerlink" href="#project-philosophy" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p><strong>RefPy</strong> is an open-source code for pipeline and riser design.</p>
-<p><strong>RefPy</strong> is a personal project developed by Ismael Ripoll to consolidate and automate tasks frequently encountered in his daily engineering routine, with the aim of having them version-controlled and accessible through a structured repository.</p>
-<p>The repository has been made publicly accessible to encourage collaboration and knowledge sharing among colleagues, while maintaining that all proprietary or confidential information remains excluded. It has been made available to allow colleagues to review, build upon, and make use of it in a collaborative and open manner, in the hope that this may give the repository a chance to continue improving beyond its original scope.</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>RefPy has made available with the intend of allowing the community to review, expand and use it under a <a class="reference external" href="https://github.com/refpy/refpy/blob/main/LICENSE">MIT License</a>. The MIT license is one of the most permissive open-source licenses, allowing for reuse and modification with minimal restrictions.</p></li>
-<li><p>Source code: The source code is saved in <a class="reference external" href="https://github.com/refpy/refpy">GitHub</a>.</p></li>
-<li><p>PyPi Wheel: A downloadable wheel of RefPy is found in <a class="reference external" href="https://pypi.org/project/refpy">PyPi</a>. To install RefPy, execute pip install refpy in a command terminal.</p></li>
+  <section id="module-refpy.abaqus_tools">
+<span id="abaqus-tools"></span><h1>Abaqus Tools<a class="headerlink" href="#module-refpy.abaqus_tools" title="Link to this heading">#</a></h1>
+<p>This module provides functionality to create Abaqus sensitivity files by replacing parameter fields
+in an Abaqus template file and generating Python code blocks for parameterized studies.</p>
+<dl class="simple">
+<dt>Features:</dt><dd><ul class="simple">
+<li><p>The <cite>AbaqusPy</cite> class automates the process of reading a template, replacing parameter fields,
+generating Python function files for embedded code blocks, and producing final sensitivity files.</p></li>
+<li><p>Designed for use in finite element sensitivity studies and parameter sweeps with Abaqus .inp
+files.</p></li>
+<li><p>All file operations are performed with robust encoding and modular methods for each step.</p></li>
 </ul>
-</div></blockquote>
-</div></blockquote>
-</section>
-<section id="project-team-members">
-<h2>Project Team Members<a class="headerlink" href="#project-team-members" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>The management of this open-source project is carried out by <a class="reference external" href="https://github.com/ismael-ripoll">Ismael Ripoll</a>.</p>
-<p>While RefPy is currently a personal initiative led by Ismael Ripoll, the project is hosted under the  dedicated refpy GitHub organisation rather than a personal account. Although there is no immediate  intention to formally announce or release the project or expand the team, this structure has been adopted to maintain flexibility for any future developments and to facilitate transparent and manageable   collaboration if it occurs.</p>
-</div></blockquote>
-</section>
-<section id="how-to-contribute-to-the-project">
-<h2>How to Contribute to the Project<a class="headerlink" href="#how-to-contribute-to-the-project" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>Interested in contributing to this personal project?</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>If you have a contribution in mind, please add it in <a class="reference external" href="https://github.com/refpy/refpy/discussions">Discussions</a>.</p></li>
-<li><p>If you have identified an issue with the code, please add it in <a class="reference external" href="https://github.com/refpy/refpy/issues">Issues</a>.</p></li>
+</dd>
+</dl>
+<hr style="height:6px; background-color:#888; border:none; margin:1.5em 0;" /><dl class="py class">
+<dt class="sig sig-object py" id="refpy.abaqus_tools.AbaqusPy">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">refpy.abaqus_tools.</span></span><span class="sig-name descname"><span class="pre">AbaqusPy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensitivity_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isens</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/refpy/abaqus_tools.html#AbaqusPy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#refpy.abaqus_tools.AbaqusPy" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to create sensitivity files by replacing parameter fields in a template file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>template_filename</strong> (<em>str</em>) – The base name of the Abaqus template file (without .inp extension).</p></li>
+<li><p><strong>sensitivity_filename</strong> (<em>str</em>) – The base name for the output sensitivity files.</p></li>
+<li><p><strong>param_dict</strong> (<em>dict</em>) – Dictionary mapping parameter names to lists of values.</p></li>
+<li><p><strong>isens</strong> (<em>int</em>) – Index of the sensitivity case to use from param_dict values.</p></li>
 </ul>
-</div></blockquote>
-</div></blockquote>
-</section>
-<section id="refpy-python-library-versions">
-<h2>RefPy Python Library Versions<a class="headerlink" href="#refpy-python-library-versions" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>THE REQUIREMENTS.txt file contains the libraries for which the script has been developed and shown to run.</p>
-<p>If some of libraries imported by RefPy lead to issues, before running RefPy for first time, follow these steps to activate a virtual environment from the REQUIREMENTS.TXT file:</p>
-<blockquote>
-<div><ol class="arabic">
-<li><p>Open a Command Prompt or PowerShell and navigate to the folder where RefPy is cloned and copy REQUIREMENTS.txt file.</p>
-<p><cite>$ cd path/to/refpy</cite></p>
-</li>
-<li><p>In the folder where the code that imports RefPy is saved, to create the virtual environment, run:</p>
-<p><cite>$ python -m venv env</cite></p>
-</li>
-<li><p>To activate the virtual environement, run: [This command works in the VSCode’s PowerShell. Command may vary in other shells]</p>
-<p><cite>$ env/Scripts/Activate.ps1</cite></p>
-</li>
-<li><p>To install the necessary libraries, run:</p>
-<p><cite>$ pip install -r ./REQUIREMENTS.txt</cite></p>
-</li>
-</ol>
-</div></blockquote>
-<p>Afterwards, the virtual environement must be activated before running RefPy by using the command in Step 3.</p>
-</div></blockquote>
-</section>
-</section>
-<section id="contents">
-<h1>Contents<a class="headerlink" href="#contents" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API Reference</a></li>
-</ul>
-</div>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
@@ -414,14 +415,14 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="getting_started.html"
-       title="next page">
+    <a class="left-prev"
+       href="oos_tools.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Getting Started</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">OOS Tools</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -442,16 +443,8 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">RefPy</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-philosophy">Project Philosophy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-team-members">Project Team Members</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-contribute-to-the-project">How to Contribute to the Project</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy-python-library-versions">RefPy Python Library Versions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refpy.abaqus_tools.AbaqusPy"><code class="docutils literal notranslate"><span class="pre">AbaqusPy</span></code></a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
