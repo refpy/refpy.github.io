@@ -1,49 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RefPy Organisation - Under Construction</title>
-    <link rel="stylesheet" href="custom.css">
-    <style>
-        body {
-            background: #f7f7f7;
-            color: #222;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            gap: 0;
-        }
-        .container {
-            background: #f7f7f7;
-            padding: 2.5rem 2rem;
-            border-radius: 12px;
-            text-align: center;
-            margin-top: 33vh;
-        }
-        h1 {
-            color: #2a5d9f;
-            margin-bottom: 0.5em;
-        }
-        .under-construction {
-            color: #e67e22;
-            font-size: 1.3em;
-            margin-top: 1em;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <svg width="600" height="180" viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto 1.2em auto;">
-          <g transform="translate(72,0)">
-            <text x="0" y="120" font-family="Segoe UI, Arial, sans-serif" font-size="108" fill="#222">Ref</text>
-            <text x="156" y="120" font-family="Segoe UI, Arial, sans-serif" font-size="108" fill="#3776AB">Py</text>
-            <circle cx="300" cy="105" r="18" fill="#FFD43B"/>
-          </g>
-        </svg>
-    </div>
-</body>
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RefPy</title>
+
+    <link href="_static/styles/theme.css" rel="stylesheet" />
+    <link href="_static/styles/pydata-sphinx-theme.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+
+    <script src="_static/scripts/fontawesome.js"></script>
+    <script src="_static/scripts/bootstrap.js" defer></script>
+    <script src="_static/scripts/pydata-sphinx-theme.js" defer></script>
+  </head>
+
+  <body>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+      <div class="bd-header__inner bd-page-width">
+        <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+          <span class="fa-solid fa-bars"></span>
+        </button>
+
+        <div class="col-lg-3 navbar-header-items__start">
+          <div class="navbar-item">
+            <a class="navbar-brand logo" href="#">
+              <img src="_static/logo.svg" class="logo__image only-light" alt="RefPy - Home" />
+              <img src="_static/logo_dark.svg" class="logo__image only-dark pst-js-only" alt="RefPy - Home" />
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-9 navbar-header-items">
+          <div class="me-auto navbar-header-items__center">
+            <div class="navbar-item">
+              <nav><!-- Optional nav links --></nav>
+            </div>
+          </div>
+
+          <div class="navbar-header-items__end">
+            <div class="navbar-item">
+              <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode">
+                <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+                <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+                <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+              </button>
+            </div>
+            <div class="navbar-item">
+              <ul class="navbar-icon-links" aria-label="Icon Links">
+                <li class="nav-item">
+                  <a href="https://github.com/refpy/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank">
+                    <i class="fab fa-github fa-lg" aria-hidden="true"></i>
+                    <span class="sr-only">GitHub</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-persistent--mobile"></div>
+
+        <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+          <span class="fa-solid fa-outdent"></span>
+        </button>
+      </div>
+    </header>
+      <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
+        <a href="https://refpy.github.io/refpy/" target="_blank">
+          <img src="_static/logo.svg" alt="RefPy Logo Light" style="width: 600px; height: auto;" class="only-light" />
+        </a>
+        <a href="https://refpy.github.io/refpy/" target="_blank">
+          <img src="_static/logo_dark_main.svg" alt="RefPy Logo Dark" style="width: 600px; height: auto;" class="only-dark pst-js-only" />
+        </a>
+      </div>
+  </body>
 </html>
